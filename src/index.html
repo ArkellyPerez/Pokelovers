@@ -6,10 +6,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <h1>"Hola"</h1>
-    <button id="exampleButton"> Try me!</button>
-    <p id="data"> </p>
+    <section>
+      <h1>Pokelovers</h1>
+      <p> Welcome back!</p>
+      <input type="text" id="userName" class= "input" placeholder="Your name" value=''>
+      <button id="goPokedex" class="button"> Go to Pokedex!</button>
+    </section>
+    <section id="pokedex">
+      <div>
+        <h2>Pokedex</h2>
+        <p id="print"></p>
+      </div>
+      <div class="pokemonContainer">
+      <figure class="onePokemon">
+        <img alt="This is a pokemon" src="https://www.serebii.net/pokemongo/pokemon/001.png"><br>
+        <span> 001 </span><br>
+        <span> Bulbasaur </span><br>
+      </figure>
+      </div>
+    </section>
     <script src="main.js" type="module"></script>
   </body>
 </html>
