@@ -1,0 +1,10 @@
+.onePokemon{
+    background-color: #E6E6FA;
+    height: auto;
+    width: 150px;
+}
+
+.pokemonContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
