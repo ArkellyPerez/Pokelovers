@@ -1,8 +1,22 @@
 import { pokemonCard } from './data.js';
 
-
 import data from './data/pokemon/pokemon.js';
 
+//____________________________________me_________________________________________________________
+let ButtonInicio=document.getElementById('goPokedex');
+document.getElementById("pokedex").style.display = "none";
+
+
+ButtonInicio.addEventListener("click", (e) => {
+    e.preventDefault(); //cancela el evento por defecto
+    document.getElementById("Form-Welcome").style.display = "none";
+    document.getElementById("pokedex").style.display = "block";
+    
+})
+
+
+
+//_____________________________________________________________________________________________
 
 const allPokemon = data.pokemon //Data de todos los pokemon y características
 
@@ -29,4 +43,4 @@ const pokemonSecondGen = pokemon.filter(p => p.num > 151 && p.num <=251)*/
 
 
 
-
+//}
