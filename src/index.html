@@ -13,15 +13,25 @@
       <button id="goPokedex" class="button"> Go to Pokedex!</button>
     </section>
     <section id="pokedex">
-      <div>
-        <h2>Pokedex</h2>
-        <p id="print"></p>
-      </div>
+      <header class="header">
+        <p id="greetings"> Welcome </p>
+        <h2 id='title'> POKEDEX </h2>
+      </header>
+      <div id="filterSelection">
+        <select class='selection'>
+          <option value="type">Type</option>
+          <option value="generation">Generation</option>
+        </select>
+        <select class='selection'>
+          <option value="number">N° in Pokedex</option>
+          <option value="alphabetic">Alphabetic</option>
+        </select>
+      </div>  
       <div class="pokemonContainer">
       <figure class="onePokemon">
-        <img alt="This is a pokemon" src="https://www.serebii.net/pokemongo/pokemon/001.png"><br>
-        <span> 001 </span><br>
-        <span> Bulbasaur </span><br>
+        <p id="pokemonNumber"> 001 </p>
+        <p id="pokemonName"> Bulbasaur </p>
+        <img alt="This is a pokemon" src="https://www.serebii.net/pokemongo/pokemon/001.png">
       </figure>
       </div>
     </section>
