@@ -8,7 +8,6 @@ export const pokemonCard = function(pokemon) {
       </figure>`
 }
 
-
 export const filterByType = function (allPokemon,type) {
   let pokemonByType = allPokemon.filter(function(pokemon){
     if (pokemon.type.includes(type)){
@@ -18,6 +17,3 @@ export const filterByType = function (allPokemon,type) {
   return pokemonByType
 }
 
-export const anotherExample = () => {
-  return 'OMG';
-};

@@ -10,7 +10,6 @@ html, body {
     background-color: lavender;
     display: flex;
 }
-
   
 #title{
     margin: auto;
@@ -19,6 +18,7 @@ html, body {
 
 #filterSelection{
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     margin: 1rem;
 }
@@ -32,6 +32,31 @@ html, body {
     border: 0;
 }
 
+.FormWelcome{
+    background-image: url("https://pokemaster.es/css/i/p/imagen_193517.png");
+    background-size: cover;
+    display: flex;
+    background-position: center center;
+    justify-content: center;
+    margin:10px;  
+    min-height: 100vh; 
+    background-attachment: fixed;
+ 
+}
+
+.FormLogin{
+    background-color:rgba(247, 253, 253, 0.7);
+ 
+    width: 500px;
+    height:500px;
+    margin: auto;
+    border-radius: 6px;
+    font-size: 20px;
+    text-align:center;
+    vertical-align: middle;
+    line-height: 300%;   
+}
+  
 .pokemonContainer{
     display: flex;
     flex-wrap: wrap;
