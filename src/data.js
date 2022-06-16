@@ -1,7 +1,3 @@
-// estas funciones son de ejemplo
-
-//import pokemon from "./data/pokemon/pokemon";
-
 export const pokemonCard = function(pokemon) {
   const {img, num, name} = pokemon
     return `
@@ -18,10 +14,6 @@ export const filterByType = function (allPokemon,type) {
          return pokemon
       }
     })
-    return pokemonByType
-  }
-  
-  export const anotherExample = () => {
-    return 'OMG';
-  };
-  
+  return pokemonByType
+}
+

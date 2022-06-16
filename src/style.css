@@ -10,8 +10,8 @@ html, body {
     background-color: lavender;
     display: flex;
 }
-
-  #title{
+  
+#title{
     margin: auto;
     font-size: 3rem;
   }
@@ -57,6 +57,12 @@ html, body {
     line-height: 300%;   
 }
   
+.pokemonContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .onePokemon{
     background-color: #E6E6FA;
     height: auto;
@@ -65,13 +71,6 @@ html, body {
     flex-direction: column;
     align-items: center;
     box-shadow:  4px 4px rgba(0, 0, 0, 0.25);
-
-}
-  
-.pokemonContainer{
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
 }
 
 .onePokemon img{
