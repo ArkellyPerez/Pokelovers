@@ -13,15 +13,42 @@
       <button id="goPokedex" class="button"> Go to Pokedex!</button>
     </section>
     <section id="pokedex">
-      <div>
-        <h2>Pokedex</h2>
-        <p id="print"></p>
-      </div>
+      <header class="header">
+        <p id="greetings"> Welcome </p>
+        <h2 id='title'> POKEDEX </h2>
+      </header>
+      <div id="filterSelection">
+        <select class='selection'>
+          <option value="allType">All type</option>
+          <option value="grass">Grass</option>
+          <option value="poison">Poison</option>
+          <option value="fire">Fire</option>
+          <option value="flying">Flying</option>
+          <option value="water">Water</option>
+          <option value="bug">Bug</option>
+          <option value="electric">Electric</option>
+          <option value="ground">Ground</option>
+          <option value="fighting">Fighting</option>
+          <option value="psychic">Psychic</option>
+          <option value="rock">Rock</option>
+          <option value="ice">Ice</option>
+          <option value="ghost">Ghost</option>
+          <option value="dragon">Dragon</option>
+          <option value="fairy">Fairy</option>
+          <option value="dark">Dark</option>
+          <option value="steel">Steel</option>
+          <option value="normal">Normal</option>
+        </select>
+        <div class="radioButton">
+          <label><input type="radio" value="pokemonNumber"> N° in Pokedex</label>
+          <label><input type="radio" value="alphabetic"> Alphabetic</label>
+        </div>
+      </div>  
       <div class="pokemonContainer">
       <figure class="onePokemon">
-        <img alt="This is a pokemon" src="https://www.serebii.net/pokemongo/pokemon/001.png"><br>
-        <span> 001 </span><br>
-        <span> Bulbasaur </span><br>
+        <p id="pokemonNumber"> 001 </p>
+        <p id="pokemonName"> Bulbasaur </p>
+        <img alt="This is a pokemon" src="https://www.serebii.net/pokemongo/pokemon/001.png">
       </figure>
       </div>
     </section>
