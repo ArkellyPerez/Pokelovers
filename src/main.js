@@ -3,7 +3,6 @@ import { pokemonCard, filterByType } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 
-
 let ButtonInicio=document.getElementById('goPokedex');
 document.getElementById("pokedex").style.display = "none";
 
@@ -12,8 +11,6 @@ ButtonInicio.addEventListener("click", (e) => {
     document.getElementById("Form-Welcome").style.display = "none";//Oculta la primera vista
     document.getElementById("pokedex").style.display = "block"; //Muestra la segunda vista  
 })
-
-
 
 const allPokemon = data.pokemon //Data de todos los pokemon y características
 
@@ -25,10 +22,6 @@ const container = document.querySelector('.pokemonContainer');
 container.innerHTML = pokemonCards.join('')
 
 const pokemonTypes = ['poison', 'grass', 'fire']
-
-
-
-
 
 
 
