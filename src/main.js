@@ -1,4 +1,4 @@
-import { pokemonCard, filterByType } from './data.js';
+import { pokemonCard, filterByType, pokeArr } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -7,7 +7,9 @@ const allPokemon = data.pokemon //Data de todos los pokemon y características
 const pokemonCards = allPokemon.map(function(pokemon){ 
     return pokemonCard(pokemon)
 })
-//console.log(pokemonCards)
+
+
+
 const container = document.querySelector('.pokemonContainer');
 container.innerHTML = pokemonCards.join('')
 
@@ -23,16 +25,13 @@ ButtonInicio.addEventListener("click", (e) => {
 
 
 let selectionType = document.querySelector('.selection');
-let selectedType = ''
 
-
-
-selectionType.addEventListener('change', function (event){
-    event.preventDefault()
-   selectedType = selectionType.options[selectionType.selectedIndex].value;
+selectionType.addEventListener('change', function (){
+   let selectedType = this.options[this.selectedIndex].value;
+    if(selectedType === ""){
+        return container.innerHTML=pokemonCards.join('')
+    } else {
+    container.innerHTML= pokeArr(filterByType(allPokemon, selectedType)).join('')
+    } 
    }
 )
-
-console.log(selectedType)
-
-console.log(filterByType(allPokemon, 'fire'))
