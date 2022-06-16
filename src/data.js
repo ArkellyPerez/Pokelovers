@@ -11,11 +11,3 @@ export const pokemonCard = (pokemon) => {
         <span> ${name} </span><br>
       </figure>`
 }
-
-export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};

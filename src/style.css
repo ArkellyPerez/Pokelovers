@@ -1,3 +1,22 @@
+
+.FormWelcome{
+    background-image: url("https://pokemaster.es/css/i/p/imagen_193517.png");
+    
+    width: 1460px;
+    height:650px;
+    margin: auto;
+}
+
+.FormLogin{
+    background-color: azure;
+    opacity: 0.5;
+    width: 500px;
+    height:500px;
+    margin: auto;
+    border-radius: 6px;
+ 
+}
+
 .onePokemon{
     background-color: #E6E6FA;
     height: auto;
