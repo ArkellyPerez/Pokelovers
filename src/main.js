@@ -22,17 +22,17 @@ ButtonInicio.addEventListener("click", (e) => {
 })
 
 
-const pokemonTypes = ['poison', 'grass', 'fire']
-
-console.log(filterByType(allPokemon, pokemonTypes[1]))
-
-//const pokemonSecondGen = pokemon.filter(p => p.num > 151 && p.num <=251)
+let selectionType = document.querySelector('.selection');
+let selectedType = ''
 
 
-/*let pokePoison = allPokemon.filter(function(pokemon){
-    if (pokemon.type.includes('poison')){
-         return pokemon
-    }
-})*/
+
+selectionType.addEventListener('change', function (event){
+    event.preventDefault()
+   selectedType = selectionType.options[selectionType.selectedIndex].value;
+   }
+)
+
+console.log(selectedType)
 
 console.log(filterByType(allPokemon, 'fire'))
