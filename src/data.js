@@ -17,3 +17,14 @@ export const filterByType = function (allPokemon,type) {
   return pokemonByType
 }
 
+/*const pokemonCards = allPokemon.map(function(pokemon){ 
+  return pokemonCard(pokemon)
+})*/
+
+export const pokeArr = function(array){
+  let newCards = array.map(function(pokemon){
+    return pokemonCard(pokemon)
+  })
+  return newCards
+}
+
