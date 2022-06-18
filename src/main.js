@@ -14,10 +14,10 @@ const container = document.querySelector('.pokemonContainer');
 container.innerHTML = pokemonCards.join('')
 
 
-let ButtonInicio=document.getElementById('goPokedex');
+let buttonInicio=document.getElementById('goPokedex');
 document.getElementById("pokedex").style.display = "none";
 
-ButtonInicio.addEventListener("click", (e) => {
+buttonInicio.addEventListener("click", (e) => {
     e.preventDefault(); //cancela el evento por defecto
     document.getElementById("Form-Welcome").style.display = "none";//Oculta la primera vista
     document.getElementById("pokedex").style.display = "block"; //Muestra la segunda vista  
