@@ -1,4 +1,4 @@
-import { pokemonCard, filterByType, pokeArr } from './data.js';
+import { pokemonCard, filterByType,sortByName, pokeArr } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -24,13 +24,26 @@ ButtonInicio.addEventListener("click", (e) => {
 
 
 let selectionType = document.querySelector('.selection');
+let selectedType=''; // Ark declarar la variable fuera
 
 selectionType.addEventListener('change', function (){
-   let selectedType = this.options[this.selectedIndex].value;
+    selectedType = this.options[this.selectedIndex].value;
     if(selectedType === ""){
-        return container.innerHTML=pokemonCards.join('')
+           return container.innerHTML=pokemonCards.join('')
+      
     } else {
-    container.innerHTML= pokeArr(filterByType(allPokemon, selectedType)).join('')
+       return container.innerHTML= pokeArr(filterByType(allPokemon, selectedType)).join('')
     } 
    }
 )
+//--------------Ark orfenado x nombre--------------------------------------------------------------
+let Sort=document.querySelector('.ButtonSortClass');
+Sort.addEventListener("click",function(){
+    if(selectedType === ""){
+        return container.innerHTML= pokeArr(sortByName(allPokemon)).join('')
+    }else {
+        return container.innerHTML= pokeArr(sortByName(filterByType(allPokemon, selectedType))).join('')
+    }
+  } 
+)
+
