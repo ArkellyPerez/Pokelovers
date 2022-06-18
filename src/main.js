@@ -13,7 +13,6 @@ const pokemonCards = allPokemon.map(function(pokemon){
 const container = document.querySelector('.pokemonContainer');
 container.innerHTML = pokemonCards.join('')
 
-
 let ButtonInicio=document.getElementById('goPokedex');
 document.getElementById("pokedex").style.display = "none";
 
