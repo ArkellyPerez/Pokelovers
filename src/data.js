@@ -28,3 +28,13 @@ export const pokeArr = function(array){
   return newCards
 }
 
+export const sortByName = function (selectionTypeArray1) {
+  let sortByNamePokemon=selectionTypeArray1.sort(function(a,b){
+    
+    if (a.name < b.name) {return -1;}
+    if (a.name > b.name) {return 1;}
+    return 0;
+  });
+
+  return sortByNamePokemon;
+}
