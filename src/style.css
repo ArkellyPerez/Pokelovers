@@ -24,9 +24,19 @@ html, body {
 }
 
 .selection{
-    text-align: center;
+    text-align: left;
     padding: 0.5rem;
-    width: 400px;
+    width: 150px;
+    background-color: #B598EF ;
+    border-radius: 0.5rem;
+    border: 0;
+}
+
+.sort1{
+  
+    text-align: left;
+    padding: 0.5rem;
+    width: 150px; 
     background-color: #B598EF ;
     border-radius: 0.5rem;
     border: 0;
@@ -41,8 +51,7 @@ html, body {
     margin:10px;  
     min-height: 100vh; 
     background-attachment: fixed;
- 
-}
+ }
 
 .FormLogin{
     background-color:rgba(247, 253, 253, 0.7);
@@ -65,14 +74,14 @@ html, body {
     flex-direction: column;
     align-items: center;
     box-shadow:  4px 4px rgba(0, 0, 0, 0.25);
-
+    border-radius: 6px;
 }
-  
+
 .pokemonContainer{
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
-}
+  }
 
 .onePokemon img{
     padding: 1rem;
@@ -80,6 +89,7 @@ html, body {
 
 .onePokemon:active{
     background-color: #B598EF;
+ 
 }
 
 #pokemonNumber{

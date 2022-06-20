@@ -28,21 +28,22 @@ export const pokeArr = function (array) {
   return newCards
 }
 
-export const sortByName = function (selectionTypeArray1) {
-  let sortByNamePokemon = selectionTypeArray1.sort(function (a, b) {
-
-    if (a.name < b.name) { return -1; }
-    if (a.name > b.name) { return 1; }
-    return 0;
-  });
-
-  return sortByNamePokemon;
+export const sortByName = function (selectionTypeArray1,SelectSort) {
+  let sortByNamePokemon='';
+ 
+if(SelectSort=="orderAtoZ"){ 
+ sortByNamePokemon= selectionTypeArray1.sort((a, b) => a.name.localeCompare(b.name));
+}
+if(SelectSort=="orderZtoA"){ 
+  sortByNamePokemon= selectionTypeArray1.sort((a, b) => b.name.localeCompare(a.name));
+}
+if(SelectSort=="sortAscending"){ 
+  sortByNamePokemon= selectionTypeArray1.sort((a, b) => a.num-b.num);
+}
+if(SelectSort=="sortDescending"){ 
+  sortByNamePokemon= selectionTypeArray1.sort((a, b) => b.num-a.num);
 }
 
+return sortByNamePokemon;
+};
 
-export const pokeSearch = (allPokemon,name) => {
-  let searchPokeName=allPokemon.filter(function(pokemon) {
-    return pokemon.name.startsWith(name);
-  })
-  return searchPokeName;
-}
