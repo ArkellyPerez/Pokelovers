@@ -36,14 +36,19 @@ selectionType.addEventListener('change', function (){
     } 
    }
 )
-//--------------Ark orfenado x nombre--------------------------------------------------------------
-let Sort=document.querySelector('.ButtonSortClass');
-Sort.addEventListener("click",function(){
-    if(selectedType === ""){
-        return container.innerHTML= pokeArr(sortByName(allPokemon)).join('')
-    }else {
-        return container.innerHTML= pokeArr(sortByName(filterByType(allPokemon, selectedType))).join('')
-    }
-  } 
-)
+//--------------Ark ordenado x nombre--------------------------------------------------------------
+let Sort=document.querySelector('.sort1');
+Sort.addEventListener('change',function(){
+let SelectSort= this.options[this.selectedIndex].value;
+ 
+if(selectedType === ""){
+       return container.innerHTML= pokeArr(sortByName(allPokemon,SelectSort)).join('')
+} else {
+        return container.innerHTML= pokeArr(sortByName(filterByType(allPokemon, selectedType),SelectSort)).join('')
+} 
+  
+  });
+
+
+
 
