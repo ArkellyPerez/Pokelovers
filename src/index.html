@@ -26,7 +26,7 @@
       </section>
     </header>
 
-    <div id="filterSelection">
+    <div id="userSelection">
       <select class='selection'>
         <option disabled selected>Filter by</option>
         <option value="">All type</option>
@@ -49,24 +49,64 @@
         <option value="steel">Steel</option>
         <option value="normal">Normal</option>
       </select>
-      <div id="sort">
-        <select class='sort1'>
-          <option disabled selected>Sort by</option>
-          <option value="orderAtoZ">Order A to Z</option>
-          <option value="orderZtoA">Order Z to A</option>
-          <option value="sortAscending">Sort Ascending</option>
-          <option value="sortDescending">Sort Descending</option>
-        </select>
-      </div>
+      <select class='sort1'>
+        <option disabled selected>Sort by</option>
+        <option value="orderAtoZ">Order A to Z</option>
+        <option value="orderZtoA">Order Z to A</option>
+        <option value="sortAscending">Sort Ascending</option>
+        <option value="sortDescending">Sort Descending</option>
+      </select>
+      
     </div>
     <div class="pokemonContainer">
+      <!--creo que tengo que encerrar en un div-->
       <figure class="onePokemon">
-        <img alt="This is a pokemon" src="https://www.serebii.net/pokemongo/pokemon/001.png"><br>
-        <span> 001 </span><br>
-        <span> Bulbasaur </span><br>
       </figure>
+    
+      <div class="modal-container" id="modalContainer">
+        <div class="modal">
+          <span id="close" class="close">&times;</span>
+          <p> 001 Bulbasaur</p>
+          <div class="oneDiv">
+            <table class="statsPokemon">
+              <tr class="height">
+                <th>Height</th>
+                <td>0.71 m</td>
+              </tr>
+              <tr class="weight">
+                <th>Weight</th>
+                <td>6.9 kg</td>
+              </tr>
+              <tr class="rarity">
+                <th>Rarity</th>
+                <td>Normal</td>
+              </tr>
+              <tr class="spawn-chance">
+                <th>Spawn chance</th>
+                <td>69%</td>
+              </tr>
+              <tr class="base-flee-rate">
+                <th>Base flee rate</th>
+                <td>10%</td>
+              </tr>
+              <tr class="base-capture-rate">
+                <th>Base capture rate</th>
+                <td>20%</td>
+              </tr>
+            </table>
+            <div class="imgAndType">
+              <img alt="This is a pokemon" src="https://www.serebii.net/pokemongo/pokemon/001.png">
+              <p> Type: Grass, Poison</p>
+            </div>
+          </div>
+          <div class="aboutPokemon">
+            <p>Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.</p>
+          </div>
+        </div>
+      <!--aca debería cerrar el div si lo abro arriba-->
     </div>
   </section>
+
   <script src="main.js" type="module"></script>
 </body>
 
