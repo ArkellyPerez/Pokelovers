@@ -10,23 +10,23 @@ html, body {
     background-color: lavender;
     display: flex;
 }
-  
+
 #title{
     margin: auto;
     font-size: 3rem;
-  }
+}
 
-#filterSelection{
+#userSelection{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin: 1rem;
 }
 
-.selection{
-    text-align: center;
+select{
+    text-align: left;
     padding: 0.5rem;
-    width: 400px;
+    width: 150px; 
     background-color: #B598EF ;
     border-radius: 0.5rem;
     border: 0;
@@ -41,8 +41,7 @@ html, body {
     margin:10px;  
     min-height: 100vh; 
     background-attachment: fixed;
- 
-}
+ }
 
 .FormLogin{
     background-color:rgba(247, 253, 253, 0.7);
@@ -57,12 +56,6 @@ html, body {
     line-height: 300%;   
 }
   
-.pokemonContainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .onePokemon{
     background-color: #E6E6FA;
     height: auto;
@@ -71,7 +64,14 @@ html, body {
     flex-direction: column;
     align-items: center;
     box-shadow:  4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
 }
+
+.pokemonContainer{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+  }
 
 .onePokemon img{
     padding: 1rem;
@@ -79,6 +79,7 @@ html, body {
 
 .onePokemon:active{
     background-color: #B598EF;
+ 
 }
 
 #pokemonNumber{
@@ -87,4 +88,41 @@ html, body {
 
 #pokemonName{
     margin: 0;
+}
+
+.modal-container{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.modal{
+    background-color: #B598EF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    width: 50%;
+    max-width: 50%;
+    height: 50%;
+    max-height: 50%;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.show{
+    opacity: 1;
+}
+
+.oneDiv{
+    display: flex;
+    justify-content: space-around;
+}
+
+#close:hover{
+    color: white;
 }
