@@ -1,4 +1,4 @@
-import { pokemonCard, filterByType,sortByName, pokeArr } from './data.js';
+import { pokemonCard, filterByType,sortByName, pokeArr, pokeSearch } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -7,7 +7,6 @@ const allPokemon = data.pokemon //Data de todos los pokemon y características
 const pokemonCards = allPokemon.map(function(pokemon){ 
     return pokemonCard(pokemon)
 })
-
 
 
 const container = document.querySelector('.pokemonContainer');
@@ -51,4 +50,22 @@ if(selectedType === ""){
 
 
 
+
+
+//---------------------------------
+
+const searchInput = document.querySelector('.card-search');
+searchInput.addEventListener('input', () => {
+  const inputValue = searchInput.value.toLowerCase();
+  console.log(inputValue);
+  const result =pokeSearch(allPokemon, inputValue);
+  if (inputValue.length > 0 && result.length > 0) {
+    container.innerHTML= (pokeArr(result)).join('');
+  } else if (inputValue.length > 0 && result.length === 0) {
+    container.textContent = 'The data of this pokemon is not currently available';
+  } else {
+    container.innerHTML= (pokeArr(result)).join('');
+  }
+});
+console.log(searchInput);
 

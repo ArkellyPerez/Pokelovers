@@ -1,6 +1,6 @@
-export const pokemonCard = function(pokemon) {
-  const {img, num, name} = pokemon
-    return `
+export const pokemonCard = function (pokemon) {
+  const { img, num, name } = pokemon
+  return `
     <figure class="onePokemon">
         <p id="pokemonNumber"> ${num} </p>
         <p id="pokemonName"> ${name} </p>
@@ -8,12 +8,12 @@ export const pokemonCard = function(pokemon) {
       </figure>`
 }
 
-export const filterByType = function (allPokemon,type) {
-  let pokemonByType = allPokemon.filter(function(pokemon){
-    if (pokemon.type.includes(type)){
-         return pokemon
-      }
-    })
+export const filterByType = function (allPokemon, type) {
+  let pokemonByType = allPokemon.filter(function (pokemon) {
+    if (pokemon.type.includes(type)) {
+      return pokemon
+    }
+  })
   return pokemonByType
 }
 
@@ -21,8 +21,8 @@ export const filterByType = function (allPokemon,type) {
   return pokemonCard(pokemon)
 })*/
 
-export const pokeArr = function(array){
-  let newCards = array.map(function(pokemon){
+export const pokeArr = function (array) {
+  let newCards = array.map(function (pokemon) {
     return pokemonCard(pokemon)
   })
   return newCards
@@ -46,3 +46,4 @@ if(SelectSort=="sortDescending"){
 
 return sortByNamePokemon;
 };
+
