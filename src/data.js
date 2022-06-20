@@ -28,9 +28,17 @@ export const pokeArr = function (array) {
   return newCards
 }
 
+
+export const pokeSearch = (allPokemon,name) => {
+  let searchPokeName=allPokemon.filter(function(pokemon) {
+    return pokemon.name.startsWith(name);
+  })
+  return searchPokeName;
+}
+
 export const sortByName = function (selectionTypeArray1,SelectSort) {
   let sortByNamePokemon='';
- 
+
 if(SelectSort=="orderAtoZ"){ 
  sortByNamePokemon= selectionTypeArray1.sort((a, b) => a.name.localeCompare(b.name));
 }
@@ -43,7 +51,5 @@ if(SelectSort=="sortAscending"){
 if(SelectSort=="sortDescending"){ 
   sortByNamePokemon= selectionTypeArray1.sort((a, b) => b.num-a.num);
 }
-
 return sortByNamePokemon;
-};
-
+}; 

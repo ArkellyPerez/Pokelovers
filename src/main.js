@@ -35,7 +35,7 @@ selectionType.addEventListener('change', function (){
     } 
    }
 )
-//--------------Ark ordenado x nombre--------------------------------------------------------------
+//--------------Ark orfenado x nombre--------------------------------------------------------------
 let Sort=document.querySelector('.sort1');
 Sort.addEventListener('change',function(){
 let SelectSort= this.options[this.selectedIndex].value;
@@ -47,10 +47,6 @@ if(selectedType === ""){
 } 
   
   });
-
-
-
-
 
 //---------------------------------
 
