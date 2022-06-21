@@ -1,13 +1,14 @@
 html, body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #4D4559;
+    color: #F0F8FF    ;
     /*background-color: rgb(219, 219, 246);*/
     margin: 0;
-    background: linear-gradient(to bottom, #CFB8F8,rgb(219, 219, 246),#CFB8F8);
+    background: #0D1C3F;
+    
 }
 
 .header{
-    background-color: lavender;
+    background-color: #071F46;
     display: flex;
 }
 
@@ -20,16 +21,24 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 1rem;
+    margin-bottom: 2%;
+
+}
+
+
+#probandocolores{
+    background-color: #0C519C;  
 }
 
 select{
     text-align: left;
     padding: 0.5rem;
     width: 150px; 
-    background-color: #B598EF ;
+    background-color: #0C519C;
     border-radius: 0.5rem;
     border: 0;
+    color: #F0F8FF; 
+    font-size: 16px;
 }
 
 .FormWelcome{
@@ -38,7 +47,6 @@ select{
     display: flex;
     background-position: center center;
     justify-content: center;
-    margin:10px;  
     min-height: 100vh; 
     background-attachment: fixed;
  }
@@ -57,14 +65,16 @@ select{
 }
   
 .onePokemon{
-    background-color: #E6E6FA;
+    background-color: #F0F8FF ;
     height: auto;
     width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow:  4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow:  4px 4px #24437A ;
     border-radius: 6px;
+    color: #24437A;
+    font-weight: bold;
 }
 
 .pokemonContainer{
@@ -78,7 +88,7 @@ select{
 }
 
 .onePokemon:active{
-    background-color: #B598EF;
+    background-color: #B0C4DE;
  
 }
 
