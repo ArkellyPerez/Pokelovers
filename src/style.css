@@ -22,12 +22,8 @@ html, body {
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 2%;
+    background-color: #0C519C;
 
-}
-
-
-#probandocolores{
-    background-color: #0C519C;  
 }
 
 select{
@@ -35,7 +31,6 @@ select{
     padding: 0.5rem;
     width: 150px; 
     background-color: #0C519C;
-    border-radius: 0.5rem;
     border: 0;
     color: #F0F8FF; 
     font-size: 16px;
@@ -63,6 +58,10 @@ select{
     vertical-align: middle;
     line-height: 300%;   
 }
+
+.card-search, .input{
+    background-color: #F0F8FF;
+}
   
 .onePokemon{
     background-color: #F0F8FF ;
@@ -89,7 +88,6 @@ select{
 
 .onePokemon:active{
     background-color: #B0C4DE;
- 
 }
 
 #pokemonNumber{
@@ -111,10 +109,11 @@ select{
     left: 0;
     height: 100vh;
     width: 100vw;
+    display: none;
 }
 
 .modal{
-    background-color: #B598EF;
+    background-color: #0C519C;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
     width: 50%;
     max-width: 50%;
@@ -135,4 +134,8 @@ select{
 
 #close:hover{
     color: white;
+}
+
+.imgAndType p{
+    margin: 0
 }

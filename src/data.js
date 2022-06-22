@@ -8,6 +8,17 @@ export const createPokemonCard = function(pokemon) { //Recibe un objeto del arra
     </figure>`
 }
 
+export const createModal = function(pokemon){
+  const {num, name} = pokemon;
+  return `
+    <div class="modal-container" id="modalContainer">
+      <div class="modal">
+        <p> ${num} ${name} </p>
+      </div>
+    </div>
+    `
+ }
+
 export const filterByType = function (allPokemon, type) {
   let pokemonByType = allPokemon.filter(function (pokemon) {
     if (pokemon.type.includes(type)) {
