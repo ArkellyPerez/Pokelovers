@@ -6,9 +6,9 @@ const allPokemon = data.pokemon //Data de todos los pokemon y características
 
 const container = document.querySelector('.pokemonContainer');
 
-let selectionType = document.querySelector('.selectionByType');
+const selectionType = document.querySelector('.selectionByType');
 
-let sortPoke=document.querySelector('.sort');
+const sortPoke=document.querySelector('.sort');
 
 const searchInput = document.querySelector('.card-search');
 
@@ -32,9 +32,11 @@ selectionType.addEventListener('change', function (){
             return container.innerHTML=pokemonCards.join('')
         } else {
             return container.innerHTML= createFilteredCards(filterByType(allPokemon, selectedType)).join('')
-        } 
+        }
     }
 )
+
+console.log(selectedType)
 
 sortPoke.addEventListener('change',function(){
     let selectSort= this.options[this.selectedIndex].value;
@@ -68,10 +70,14 @@ let insertModals = document.querySelector('.firstModalContainer')
 insertModals.innerHTML = pokemonModal.join('')
 
 
-let seeData = document.querySelectorAll('.onePokemon')[2];
 
-let modalContainer = document.querySelectorAll('.modal-container')[2];
-   
+for(let i=0; i<allPokemon.length; i++){
+   return i}
+
+let seeData = document.querySelectorAll('.onePokemon')[i];
+
+let modalContainer = document.querySelectorAll('.modal-container')[i];   
+
 seeData.addEventListener('click', function(){
     modalContainer.style.display= 'block'
 })
