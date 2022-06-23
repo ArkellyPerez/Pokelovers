@@ -1,7 +1,6 @@
 html, body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #F0F8FF    ;
-    /*background-color: rgb(219, 219, 246);*/
+    color: #F0F8FF;
     margin: 0;
     background: #0D1C3F;
     
@@ -36,7 +35,7 @@ select{
     font-size: 16px;
 }
 
-.FormWelcome{
+.formWelcome{
     background-image: url("https://pokemaster.es/css/i/p/imagen_193517.png");
     background-size: cover;
     display: flex;
@@ -46,17 +45,18 @@ select{
     background-attachment: fixed;
  }
 
-.FormLogin{
+.formLogin{
     background-color:rgba(247, 253, 253, 0.7);
- 
     width: 500px;
-    height:500px;
+    height: 500px;
     margin: auto;
     border-radius: 6px;
     font-size: 20px;
-    text-align:center;
-    vertical-align: middle;
-    line-height: 300%;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    padding: 1rem;
 }
 
 .card-search, .input{
@@ -121,21 +121,9 @@ select{
     max-height: 50%;
     padding: 2%;
     border-radius: 10px;
+    margin: auto;
 }
 
-.show{
-    opacity: 1;
-}
-
-.oneDiv{
-    display: flex;
-    justify-content: space-around;
-}
-
-#close:hover{
-    color: white;
-}
-
-.imgAndType p{
-    margin: 0
+#pokedex{
+    display: none;
 }

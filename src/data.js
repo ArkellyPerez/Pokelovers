@@ -9,11 +9,17 @@ export const createPokemonCard = function(pokemon) { //Recibe un objeto del arra
 }
 
 export const createModal = function(pokemon){
-  const {num, name} = pokemon;
+  const {num, name, img, type, about} = pokemon;
   return `
     <div class="modal-container" id="modalContainer">
       <div class="modal">
         <p> ${num} ${name} </p>
+        <div class="imgAndType">
+          <img alt="This is a pokemon" src="${img}">
+          <p> Type:${type}</p>
+          <p> Generation I: Kanto</p>
+        </div>
+        <p>${about}</p>
       </div>
     </div>
     `
@@ -42,19 +48,19 @@ export const pokeSearch = (allPokemon,name) => {
   return searchPokeName;
 }
 
-export const sortByName = function (selectionTypeArray1,SelectSort) {
-  let sortByNamePokemon='';
+export const sort = function (selectionTypeArray1,SelectSort) {
+  let sortPokemon='';
   if(SelectSort=="orderAtoZ"){ 
-    sortByNamePokemon= selectionTypeArray1.sort((a, b) => a.name.localeCompare(b.name));
+    sortPokemon= selectionTypeArray1.sort((a, b) => a.name.localeCompare(b.name));
   }
   if(SelectSort=="orderZtoA"){ 
-    sortByNamePokemon= selectionTypeArray1.sort((a, b) => b.name.localeCompare(a.name));
+    sortPokemon= selectionTypeArray1.sort((a, b) => b.name.localeCompare(a.name));
   }
   if(SelectSort=="sortAscending"){ 
-    sortByNamePokemon= selectionTypeArray1.sort((a, b) => a.num-b.num);
+    sortPokemon= selectionTypeArray1.sort((a, b) => a.num-b.num);
   }
   if(SelectSort=="sortDescending"){ 
-    sortByNamePokemon= selectionTypeArray1.sort((a, b) => b.num-a.num);
+    sortPokemon= selectionTypeArray1.sort((a, b) => b.num-a.num);
   }
-  return sortByNamePokemon;
+  return sortPokemon;
 }; 
