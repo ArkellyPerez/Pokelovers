@@ -1,4 +1,4 @@
-import {createPokemonCard, filterByType, sortByName, createFilteredCards, pokeSearch} from './data.js';
+import {createPokemonCard, filterByType, sortByName, createFilteredCards, pokeSearch, createModal} from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -9,7 +9,7 @@ const pokemonCards = allPokemon.map(function(pokemon){
 })
 
 const container = document.querySelector('.pokemonContainer');
-container.innerHTML = pokemonCards.join('')
+container.insertAdjacentHTML("afterbegin",pokemonCards.join(''))
 
 let buttonInicio=document.getElementById('goPokedex');
 document.getElementById("pokedex").style.display = "none";
@@ -21,16 +21,24 @@ buttonInicio.addEventListener("click", (e) => {
 })
 
 //Armando el modal
+const pokemonModal = allPokemon.map(function(pokemon){ 
+    return createModal(pokemon)
+})
 
-let seeData = document.querySelectorAll('.onePokemon')[0];
+let insertModals = document.querySelector('.firstModalContainer')
+insertModals.innerHTML = pokemonModal.join('')
 
-let modalContainer = document.getElementById('modalContainer')
+
+let seeData = document.querySelectorAll('.onePokemon')[2];
+
+let modalContainer = document.querySelectorAll('.modal-container')[2];
    
 seeData.addEventListener('click', function(){
-    console.log('Hola mundo')
-    modalContainer.classList.add('show')
-    
+    modalContainer.style.display= 'block'
 })
+
+console.log(modalContainer)
+
 
 //Fin del armado del modal
 
