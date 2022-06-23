@@ -8,13 +8,13 @@
 </head>
 
 <body>
-  <section class="FormWelcome" id="Form-Welcome">
-    <div class="FormLogin">
-      <p id="pokeLogo"><img src="https://fontmeme.com/permalink/220616/a790e1adb1017e3dea29bb42aba47dff.png" alt="fuente-pokemon"></p>
+  <section class="formWelcome">
+    <form class="formLogin">
+      <img src="https://fontmeme.com/permalink/220616/a790e1adb1017e3dea29bb42aba47dff.png" alt="fuente-pokemon">
       <h1> Welcome home, trainer!</h1>
       <input type="text" id="userName" class="input" placeholder="Your name" value=''>
-      <button id="goPokedex" class="button"> Go to Pokedex!</button>
-    </div>
+      <button id="goPokedex"> Go to Pokedex!</button>
+    </form>
   </section>
 
   <section id="pokedex">
@@ -27,7 +27,7 @@
     </header>
 
     <div id="userSelection">
-      <select class='selection'>
+      <select class='selectionByType'>
         <option disabled selected>Filter by</option>
         <option value="">All type</option>
         <option value="grass">Grass</option>
@@ -49,7 +49,7 @@
         <option value="steel">Steel</option>
         <option value="normal">Normal</option>
       </select>
-      <select class='sort1'>
+      <select class='sort'>
         <option disabled selected>Sort by</option>
         <option value="orderAtoZ">Order A to Z</option>
         <option value="orderZtoA">Order Z to A</option>
