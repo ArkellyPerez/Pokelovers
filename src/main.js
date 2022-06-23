@@ -1,4 +1,4 @@
-import {createPokemonCard, filterByType, sort, createFilteredCards, pokeSearch, createModal} from './data.js';
+import {createPokemonCard, filterByType, sort, createFilteredCards, pokeSearch} from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -36,8 +36,6 @@ selectionType.addEventListener('change', function (){
     }
 )
 
-console.log(selectedType)
-
 sortPoke.addEventListener('change',function(){
     let selectSort= this.options[this.selectedIndex].value;
         if(selectedType === ""){
@@ -62,24 +60,27 @@ searchInput.addEventListener('input', () => {
 );
 
 //Armando el modal
-const pokemonModal = allPokemon.map(function(pokemon){ 
-    return createModal(pokemon)
-})
+
 
 let insertModals = document.querySelector('.firstModalContainer')
-insertModals.innerHTML = pokemonModal.join('')
 
+let modalContainer = document.querySelector('.modal-container');   
 
-
-for(let i=0; i<allPokemon.length; i++){
-   return i}
-
-let seeData = document.querySelectorAll('.onePokemon')[i];
-
-let modalContainer = document.querySelectorAll('.modal-container')[i];   
-
-seeData.addEventListener('click', function(){
-    modalContainer.style.display= 'block'
+container.addEventListener('click', function(event){
+    event.target
+    console.log(modalContainer)
+   /*const {num, name, img, type, about} = allPokemon[0]
+    console.log( `<div class="modal-container" id="modalContainer">
+        <div class="modal">
+      <p> ${num} ${name} </p>
+      <div class="imgAndType">
+        <img alt="This is a pokemon" src="${img}">
+        <p> Type:${type}</p>
+        <p> Generation I: Kanto</p>
+      </div>
+      <p>${about}</p>
+    </div>
+  </div>`)*/
 })
 
 //Fin del armado del modal
