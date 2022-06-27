@@ -63,10 +63,25 @@ select{
     background-color: #F0F8FF;
 }
   
+.buttonCard{
+    background-color: #F0F8FF ;
+    margin:auto;
+    height: auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow:  4px 4px #24437A ;
+    border-radius: 6px;
+    color: #24437A;
+    font-weight: bold;
+}
+
+
 .onePokemon{
     background-color: #F0F8FF ;
     height: auto;
-    width: 200px;
+    width: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,7 +98,8 @@ select{
   }
 
 .onePokemon img{
-    padding: 1rem;
+    padding: 2rem;
+    margin:auto;
 }
 
 .onePokemon:active{
@@ -97,8 +113,8 @@ select{
 #pokemonName{
     margin: 0;
 }
-
-.modal-container{
+/*
+.modalContainer{
     display: flex;
     background-color: rgba(0, 0, 0, 0.25);
     align-items: center;
@@ -109,21 +125,28 @@ select{
     left: 0;
     height: 100vh;
     width: 100vw;
+}*/
+
+
+
+#pokedex{
     display: none;
 }
 
 .modal{
-    background-color: #0C519C;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    width: 50%;
-    max-width: 50%;
-    height: 50%;
-    max-height: 50%;
+  
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #5c5c86;
+    width:70%;
+    height: 60%;
     padding: 2%;
     border-radius: 10px;
     margin: auto;
 }
 
-#pokedex{
-    display: none;
-}
+
+   
