@@ -78,5 +78,4 @@ modalContainer.innerHTML=createModal(selectedPokemon[0]);
 
   }
   );
-
-//Fin del armado del modal
+  //Fin del armado del modal
