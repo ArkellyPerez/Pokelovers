@@ -1,4 +1,4 @@
-import {createPokemonCard, filterByType, sort, createFilteredCards, pokeSearch} from './data.js';
+import {createPokemonCard, filterByType, sort, createFilteredCards, pokeSearch,createModal} from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -11,6 +11,10 @@ const selectionType = document.querySelector('.selectionByType');
 const sortPoke=document.querySelector('.sort');
 
 const searchInput = document.querySelector('.card-search');
+
+
+document.querySelector(".modal").style.display = "none";
+
 
 document.getElementById('goPokedex').addEventListener("click", (event) => {
     event.preventDefault();
@@ -41,11 +45,12 @@ sortPoke.addEventListener('change',function(){
         if(selectedType === ""){
             return container.innerHTML= createFilteredCards(sort(allPokemon,selectSort)).join('')
         } else {
-            return container.innerHTML= createFilteredCards(sort(filterByType(allPokemon, selectedType), selectSort)).join('')
+                return container.innerHTML= createFilteredCards(sort(filterByType(allPokemon, selectedType), selectSort)).join('')
         } 
+        
     }
+    
 )
-
 searchInput.addEventListener('input', () => {
   const inputValue = searchInput.value.toLowerCase();
   const result =pokeSearch(allPokemon, inputValue);
@@ -62,25 +67,15 @@ searchInput.addEventListener('input', () => {
 //Armando el modal
 
 
-let insertModals = document.querySelector('.firstModalContainer')
+ let modalContainer = document.querySelector('.modalContainer');   
+ container.addEventListener('click', function(event){
+ let target=event.target
+ document.querySelector(".modal").style.display = "block";
+ console.log(target.className);
+  let selectedPokemon = pokeSearch(allPokemon,target.className);
 
-let modalContainer = document.querySelector('.modal-container');   
+modalContainer.innerHTML=createModal(selectedPokemon[0]);
 
-container.addEventListener('click', function(event){
-    event.target
-    console.log(modalContainer)
-   /*const {num, name, img, type, about} = allPokemon[0]
-    console.log( `<div class="modal-container" id="modalContainer">
-        <div class="modal">
-      <p> ${num} ${name} </p>
-      <div class="imgAndType">
-        <img alt="This is a pokemon" src="${img}">
-        <p> Type:${type}</p>
-        <p> Generation I: Kanto</p>
-      </div>
-      <p>${about}</p>
-    </div>
-  </div>`)*/
-})
-
-//Fin del armado del modal
+  }
+  );
+  //Fin del armado del modal

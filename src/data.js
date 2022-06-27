@@ -2,28 +2,27 @@ export const createPokemonCard = function(pokemon) { //Recibe un objeto del arra
   const {img, num, name} = pokemon //Se accede a la imagen, número y nombre del Pokemon
     return `
     <figure class="onePokemon">
-      <p id="pokemonNumber"> ${num} </p>
-      <p id="pokemonName"> ${name} </p>
-      <img alt="This is a pokemon" src="${img}">
+    <button class="buttonCard">
+      <p class= ${name} id="pokemonNumber"> ${num} </p>
+      <p class= ${name} id="pokemonName"> ${name} </p>
+      <img  class=${name} alt="This is a pokemon" src="${img}">
+    </button>
     </figure>`
 }
 
-/*export const createModal = function(pokemon){
+export const createModal = function(pokemon){
   const {num, name, img, type, about} = pokemon;
   return `
-    <div class="modal-container" id="modalContainer">
-      <div class="modal">
-        <p> ${num} ${name} </p>
-        <div class="imgAndType">
-          <img alt="This is a pokemon" src="${img}">
-          <p> Type:${type}</p>
-          <p> Generation I: Kanto</p>
-        </div>
-        <p>${about}</p>
-      </div>
-    </div>
+  
+  <p> ${num} ${name} </p>
+  <div class="imgAndType">
+    <img alt="This is a pokemon" src="${img}">
+    <p> Type:${type}</p>
+    <p> Generation I: Kanto</p>
+  </div>
+  <p>${about}</p>
     `
- }*/
+ }
 
 export const filterByType = function (allPokemon, type) {
   let pokemonByType = allPokemon.filter(function (pokemon) {
@@ -64,3 +63,4 @@ export const sort = function (selectionTypeArray1,SelectSort) {
   }
   return sortPokemon;
 }; 
+
