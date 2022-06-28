@@ -1,4 +1,4 @@
-import {createPokemonCard, filterByType, sort, createFilteredCards, pokeSearch,createModal} from './data.js';
+import {createPokemonCard, filterByType, sort, createFilteredCards, pokeSearch,createModal,computeType} from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -9,11 +9,21 @@ const container = document.querySelector('.pokemonContainer');
 const selectionType = document.querySelector('.selectionByType');
 
 const sortPoke=document.querySelector('.sort');
-
 const searchInput = document.querySelector('.card-search');
+const buttonName = document.getElementById("goPokedex");
+
+// const percentagesByPokemon = document.getElementById("percentage");
 
 
 document.querySelector(".modal").style.display = "none";
+
+
+buttonName.addEventListener("click", saveName);
+function saveName() {
+    let inputName = document.getElementById("userName");
+    let inputNameValue= inputName.value;
+    document.getElementById("greetings").innerHTML = "Welcome " + inputNameValue; 
+  }
 
 
 document.getElementById('goPokedex').addEventListener("click", (event) => {
@@ -33,10 +43,11 @@ let selectedType='';
 selectionType.addEventListener('change', function (){
     selectedType = this.options[this.selectedIndex].value;
         if(selectedType === ""){
-            return container.innerHTML=pokemonCards.join('')
+            return container.innerHTML=pokemonCards.join('') 
         } else {
-            return container.innerHTML= createFilteredCards(filterByType(allPokemon, selectedType)).join('')
+            return container.innerHTML= createFilteredCards(filterByType(allPokemon, selectedType)).join('')             
         }
+    
     }
 )
 
@@ -46,10 +57,8 @@ sortPoke.addEventListener('change',function(){
             return container.innerHTML= createFilteredCards(sort(allPokemon,selectSort)).join('')
         } else {
                 return container.innerHTML= createFilteredCards(sort(filterByType(allPokemon, selectedType), selectSort)).join('')
-        } 
-        
-    }
-    
+        }      
+    }    
 )
 searchInput.addEventListener('input', () => {
   const inputValue = searchInput.value.toLowerCase();
@@ -79,3 +88,7 @@ modalContainer.innerHTML=createModal(selectedPokemon[0]);
   }
   );
   //Fin del armado del modal
+
+
+  
+

@@ -64,3 +64,10 @@ export const sort = function (selectionTypeArray1,SelectSort) {
   return sortPokemon;
 }; 
 
+export const computeType =(type, allPokemon)=>{
+  let total=((type*100)/allPokemon).toFixed(2);
+  return total;
+
+}
+
+
