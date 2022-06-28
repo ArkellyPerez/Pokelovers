@@ -1,3 +1,4 @@
+
 import {createPokemonCard, filterByType, sort, createFilteredCards, pokeSearch, createModal} from './data.js';
 
 import data from './data/pokemon/pokemon.js';
@@ -11,6 +12,10 @@ const selectionType = document.querySelector('.selectionByType'); //Selector par
 const sortPoke=document.querySelector('.sort'); //Selector para elegir como ordenar
 
 const searchInput = document.querySelector('.card-search'); //Input para buscar
+
+const buttonName = document.getElementById("goPokedex");
+
+// const percentagesByPokemon = document.getElementById("percentage");
 
 const buttonName = document.getElementById("goPokedex");
 
@@ -94,7 +99,3 @@ container.addEventListener('click', function(event){
 )
 
   //Fin del armado del modal
-
-
-  
-
