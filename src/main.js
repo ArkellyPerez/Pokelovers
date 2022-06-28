@@ -1,4 +1,4 @@
-import {createPokemonCard, filterByType, sort, createFilteredCards, pokeSearch,createModal} from './data.js';
+import {createPokemonCard, filterByType, sort, createFilteredCards, pokeSearch, createModal} from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -12,9 +12,22 @@ const sortPoke=document.querySelector('.sort'); //Selector para elegir como orde
 
 const searchInput = document.querySelector('.card-search'); //Input para buscar
 
+const buttonName = document.getElementById("goPokedex");
+
+// const percentagesByPokemon = document.getElementById("percentage");
+
 const modalContainer = document.querySelector('.modalContainer'); //Contenedor donde van los modales
 
 document.querySelector(".modal").style.display = "none";
+
+
+buttonName.addEventListener("click", saveName);
+function saveName() {
+    let inputName = document.getElementById("userName");
+    let inputNameValue= inputName.value;
+    document.getElementById("greetings").innerHTML = "Welcome " + inputNameValue; 
+  }
+
 
 document.getElementById('goPokedex').addEventListener("click", (event) => {
     event.preventDefault();
@@ -33,10 +46,11 @@ let selectedType='';
 selectionType.addEventListener('change', function (){
     selectedType = this.options[this.selectedIndex].value;
         if(selectedType === ""){
-            return container.innerHTML=pokemonCards.join('')
+            return container.innerHTML=pokemonCards.join('') 
         } else {
-            return container.innerHTML= createFilteredCards(filterByType(allPokemon, selectedType)).join('')
+            return container.innerHTML= createFilteredCards(filterByType(allPokemon, selectedType)).join('')             
         }
+    
     }
 )
 
@@ -46,8 +60,8 @@ sortPoke.addEventListener('change',function(){
             return container.innerHTML= createFilteredCards(sort(allPokemon,selectSort)).join('')
         } else {
                 return container.innerHTML= createFilteredCards(sort(filterByType(allPokemon, selectedType), selectSort)).join('')
-        } 
-    }  
+        }      
+    }    
 )
 
 searchInput.addEventListener('input', () => {
@@ -80,3 +94,7 @@ container.addEventListener('click', function(event){
 )
 
   //Fin del armado del modal
+
+
+  
+
