@@ -22,7 +22,6 @@ html, body {
     justify-content: space-around;
     margin-bottom: 2%;
     background-color: #0C519C;
-
 }
 
 select{
@@ -62,85 +61,64 @@ select{
 .card-search, .input{
     background-color: #F0F8FF;
 }
-  
-.buttonCard{
-    background-color: #F0F8FF ;
-    margin:auto;
-    height: auto;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow:  4px 4px #24437A ;
-    border-radius: 6px;
-    color: #24437A;
-    font-weight: bold;
-}
-
-
-.onePokemon{
-    background-color: #F0F8FF ;
-    height: auto;
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow:  4px 4px #24437A ;
-    border-radius: 6px;
-    color: #24437A;
-    font-weight: bold;
-}
-
-.pokemonContainer{
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-  }
-
-.onePokemon img{
-    padding: 2rem;
-    margin:auto;
-}
-
-.onePokemon:active{
-    background-color: #B0C4DE;
-}
-
-#pokemonNumber{
-    font-weight: 700;
-}
-
-#pokemonName{
-    margin: 0;
-}
-/*
-.modalContainer{
-    display: flex;
-    background-color: rgba(0, 0, 0, 0.25);
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-}*/
-
-
 
 #pokedex{
     display: none;
 }
 
+.pokemonContainer{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   padding: 0 2rem;
+}
+
+.onePokemon{
+    background-color: #F0F8FF ;
+    height: auto;
+    width: auto;
+    margin: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow:  4px 4px #24437A ;
+    border-radius: 6px;
+    color: #24437A;
+    font-weight: bold;
+    border: 0;
+}
+
+.onePokemon img{
+    padding: 2rem;
+    margin: 0;
+}
+
+.onePokemon:hover{
+    background-color: #B0C4DE;
+}
+
+#pokemonName{
+    font-size: 14px;
+    padding: 1rem 2.5rem 0;
+    margin: 0
+}
+
 .modal{
-  
+    background-color: rgba(0, 0, 0, 0.25);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
+.modalContainer{
     position: fixed;
     top:0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #5c5c86;
+    background-color: #24437A;
     width:70%;
     height: 60%;
     padding: 2%;
@@ -148,5 +126,35 @@ select{
     margin: auto;
 }
 
+#close{
+    float: right;
+    border: 0;
+}
 
-   
+#close:hover{
+    background-color: #B0C4DE;
+}
+
+.tableAndPokemon{
+    display: flex;
+    justify-content: space-around;
+}
+
+/*table{
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: 1px grey;
+}*/
+
+#pokemonNameInModal{
+    font-size: 2rem;
+    margin: 1rem;
+    font-weight: bold;
+}
+
+.imgAndType p{
+    margin: 0.5rem;
+}

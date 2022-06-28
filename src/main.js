@@ -1,19 +1,27 @@
-import {createPokemonCard, filterByType, sort, createFilteredCards, pokeSearch,createModal,computeType} from './data.js';
+
+import {createPokemonCard, filterByType, sort, createFilteredCards, pokeSearch, createModal} from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
 const allPokemon = data.pokemon //Data de todos los pokemon y características
 
-const container = document.querySelector('.pokemonContainer');
+const container = document.querySelector('.pokemonContainer'); //Contenedor donde van las cartas de pokemon
 
-const selectionType = document.querySelector('.selectionByType');
+const selectionType = document.querySelector('.selectionByType'); //Selector para elegir por que tipo filtrar
 
-const sortPoke=document.querySelector('.sort');
-const searchInput = document.querySelector('.card-search');
+const sortPoke=document.querySelector('.sort'); //Selector para elegir como ordenar
+
+const searchInput = document.querySelector('.card-search'); //Input para buscar
+
 const buttonName = document.getElementById("goPokedex");
 
 // const percentagesByPokemon = document.getElementById("percentage");
 
+const buttonName = document.getElementById("goPokedex");
+
+// const percentagesByPokemon = document.getElementById("percentage");
+
+const modalContainer = document.querySelector('.modalContainer'); //Contenedor donde van los modales
 
 document.querySelector(".modal").style.display = "none";
 
@@ -60,6 +68,7 @@ sortPoke.addEventListener('change',function(){
         }      
     }    
 )
+
 searchInput.addEventListener('input', () => {
   const inputValue = searchInput.value.toLowerCase();
   const result =pokeSearch(allPokemon, inputValue);
@@ -75,20 +84,18 @@ searchInput.addEventListener('input', () => {
 
 //Armando el modal
 
-
- let modalContainer = document.querySelector('.modalContainer');   
- container.addEventListener('click', function(event){
- let target=event.target
- document.querySelector(".modal").style.display = "block";
- console.log(target.className);
-  let selectedPokemon = pokeSearch(allPokemon,target.className);
-
-modalContainer.innerHTML=createModal(selectedPokemon[0]);
-
+container.addEventListener('click', function(event){
+    let target=event.target;
+    document.querySelector(".modal").style.display = "block";
+        //console.log(target.className);
+    let selectedPokemon = pokeSearch(allPokemon,target.className);
+    modalContainer.innerHTML=createModal(selectedPokemon[0]);
+    let close= document.getElementById('close');
+    close.addEventListener('click', function(){
+            document.querySelector(".modal").style.display = "none"
+        }
+    );
   }
-  );
+)
+
   //Fin del armado del modal
-
-
-  
-
