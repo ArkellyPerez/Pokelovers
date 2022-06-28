@@ -1,23 +1,17 @@
-import { example, anotherExample } from '../src/data.js';
+import { createPokemonCard, filterByType } from '../src/data.js';
 
-
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
+describe('createPokemonCard', () => {
+  it('debería ser una función', () => {
+    expect(typeof createPokemonCard).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});
-
-
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('para pokemon "bulbasaur" retorna el código de su figure', () => {
+    expect(createPokemonCard('')).toBe('<figure class="pokemonCard" id= "bulbasaur"> <p id="pokemonData"> 001 bulbasaur </p> <img alt="This is a pokemon" src="https://www.serebii.net/pokemongo/pokemon/001.png/> </figure>');
   });
 });
+
+describe('filterByType', () => {
+  it('debería ser una función', () =>{
+    expect(typeof filterByType).toBe('function')
+  })
+})
