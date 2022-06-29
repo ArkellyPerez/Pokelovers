@@ -9,6 +9,8 @@ html, body {
 .header{
     background-color: #071F46;
     display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
 }
 
 #title{
@@ -58,8 +60,17 @@ select{
     padding: 1rem;
 }
 
-.card-search, .input{
+input {
     background-color: #F0F8FF;
+    padding: 2px 4px
+}
+
+.card-search{
+    float: right;
+}
+
+#greetings{
+    float: left;
 }
 
 #pokedex{
@@ -76,8 +87,9 @@ select{
 .onePokemon{
     background-color: #F0F8FF ;
     height: auto;
-    width: auto;
+    width: 200px;
     margin: 0.8rem;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,9 +138,29 @@ select{
     margin: auto;
 }
 
+.modalContainer p{
+    margin: 1rem;
+}
+
+.percentage{
+    text-align: center;
+}
+
+#pokemonNameInModal{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 #close{
     float: right;
-    border: 0;
+    border: solid 2px #F0F8FF;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #24437A;
+    color: #F0F8FF;
+    font-weight: bold;
+    padding: 0;
+    border-radius: 100%;
 }
 
 #close:hover{
@@ -138,23 +170,35 @@ select{
 .tableAndPokemon{
     display: flex;
     justify-content: space-around;
+    margin: 2rem 0
 }
 
-/*table{
-    display: table;
-    border-collapse: separate;
-    box-sizing: border-box;
-    text-indent: initial;
-    border-spacing: 2px;
-    border-color: 1px grey;
-}*/
+table{
+   border-collapse: collapse;
+   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+   font-size: 14px;
+   
+}
 
-#pokemonNameInModal{
-    font-size: 2rem;
-    margin: 1rem;
-    font-weight: bold;
+td, th{
+    padding: 0 1rem;
+    border: solid 1px #F0F8FF;
+}
+
+td{
+    padding: 0 2rem;
+}
+
+
+
+
+.imgAndType{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .imgAndType p{
     margin: 0.5rem;
 }
+

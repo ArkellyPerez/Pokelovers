@@ -1,14 +1,16 @@
+import data from './data/pokemon/pokemon.js';
+
 export const createPokemonCard = function(pokemon) { //Recibe un objeto del array 
   const {img, num, name} = pokemon //Se accede a la imagen, número y nombre del Pokemon
     return `
     <button class="onePokemon">
-      <p class= ${name} id="pokemonName"> ${num} ${name.charAt(0).toUpperCase()+ name.slice(1)} </p>
-      <img  class=${name} alt="This is a pokemon" src="${img}">
+      <p class=${name} id="pokemonName"> ${num} ${name.charAt(0).toUpperCase()+ name.slice(1)} </p>
+      <img class=${name} alt="This is a pokemon" src="${img}">
     </button>`
 }
 
 export const createModal = function(pokemon){
-  const {num, name, size:{height, weight}, encounter, img, type, generation, about} = pokemon;
+  const {num, name, size:{height, weight}, encounter, img, type, generation, about, resistant, weaknesses} = pokemon;
   return `
   <button id="close">X</button>
   <p id=pokemonNameInModal>${num} ${name.charAt(0).toUpperCase()+ name.slice(1)}</p>
@@ -41,7 +43,9 @@ export const createModal = function(pokemon){
       <p> ${generation.num.charAt(0).toUpperCase()+ generation.num.slice(1)}: ${generation.name.charAt(0).toUpperCase()+ generation.name.slice(1)}</p>
     </div>
   </div>
-  <p>${about}</p>`
+  <p>${about}</p>
+  <p>Resistant: ${resistant}</p>
+  <p>Weaknesses: ${weaknesses}</p>`
 }
 
 export const filterByType = function (allPokemon, type) {
@@ -84,10 +88,9 @@ export const sort = function (selectionTypeArray1,SelectSort) {
   return sortPokemon;
 }; 
 
-export const computeType =(type, allPokemon)=>{
-  let total=((type*100)/allPokemon).toFixed(2);
-  return total;
-
+export const computeType = (pokemon, type)=>{
+  let selectedPokemon = filterByType(pokemon, type).length
+  return (selectedPokemon*100/pokemon.length).toFixed(2)+"%"
 }
 
-
+export let allPokemon = data.pokemon
