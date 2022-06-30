@@ -1,13 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&family=Roboto:wght@300&display=swap');
+
+
 html, body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;;
     color: #F0F8FF;
     margin: 0;
-    background: #0D1C3F;
-    
+    background-image: url("https://i.ibb.co/CMLm0mJ/nature-sky-moonlight-cloud-flower-pokemon-575486-wallhere-com.jpg");
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .header{
-    background-color: #071F46;
+    background-color: #0D1C3F;
     display: flex;
     align-items: center;
     padding: 1rem 2rem;
@@ -23,21 +28,21 @@ html, body {
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 2%;
-    background-color: #0C519C;
+    background-color: #071F46;
 }
 
 select{
     text-align: left;
     padding: 0.5rem;
     width: fit-content; 
-    background-color: #0C519C;
+    background-color: #071F46;
     border: 0;
     color: #F0F8FF; 
     font-size: 16px;
 }
 
 .formWelcome{
-    background-image: url("https://pokemaster.es/css/i/p/imagen_193517.png");
+    background-image: url("https://i.ibb.co/PMDsSWp/TAU50N.jpg");
     background-size: cover;
     display: flex;
     background-position: center center;

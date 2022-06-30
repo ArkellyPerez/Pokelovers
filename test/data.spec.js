@@ -1,4 +1,4 @@
-import { createPokemonCard, filterByType, allPokemon } from '../src/data.js';
+import { createPokemonCard, filterByType, allPokemon, pokeSearch } from '../src/data.js';
 
 describe('allPokemon', () =>{
   it('objeto de pokemons', ()=>{
@@ -25,3 +25,20 @@ describe('filterByType', () => {
     expect(typeof filterByType).toBe('function')
   })
 })
+
+
+describe('pokeSearch', () =>{
+  it('debe ser una función', ()=>{
+    expect(typeof pokeSearch).toBe('function')
+  })
+});
+
+it('cuando se busque pid en el buscador debe contener pidgey', () => {
+expect(pokeSearch(allPokemon, "pid")[0]).toEqual(
+  expect.objectContaining({
+    name: "pidgey"
+    })
+  )
+})
+
+
