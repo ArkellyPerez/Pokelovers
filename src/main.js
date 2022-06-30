@@ -12,52 +12,46 @@ const sortPoke=document.querySelector('.sort'); //Selector para elegir como orde
 
 const searchInput = document.querySelector('.card-search'); //Input para buscar
 
-const buttonName = document.getElementById("goPokedex");
+const goPokedex = document.getElementById("goPokedex"); //Botón de inicio
 
 const percentagesByPokemon = document.querySelector(".percentage");
 
 const modalContainer = document.querySelector('.modalContainer'); //Contenedor donde van los modales
 
-document.querySelector(".modal").style.display = "none";
-
-
-buttonName.addEventListener("click", saveName);
-function saveName() {
-    let inputName = document.getElementById("userName");
-    let inputNameValue= inputName.value;
-    if(inputNameValue != ''){
-    document.getElementById("greetings").innerHTML = "Welcome, " + inputNameValue + "!"; 
-    } else {
-        return
-    }
-  }
-
-document.getElementById('goPokedex').addEventListener("click", (event) => {
+goPokedex.addEventListener('click', (event) => {
     event.preventDefault();
-    document.querySelector(".formWelcome").style.display = "none";
-    document.getElementById("pokedex").style.display = "block";
+    let userName = document.getElementById("userName").value;
+    if(userName != ''){
+        document.querySelector(".formWelcome").style.display = "none";
+        document.getElementById("pokedex").style.display = "block"; 
+        document.getElementById("greetings").innerHTML = "Welcome, " + userName + "!"
+    }
 })
 
+//Función para crear las cartas de pokemon
 const pokemonCards = allPokemon.map(function(pokemon){ 
     return createPokemonCard(pokemon)
 })
 
-container.insertAdjacentHTML("afterbegin",pokemonCards.join(''))
+container.insertAdjacentHTML("afterbegin", pokemonCards.join(''))
 
 let selectedType='';
 
+//Función para filtrar por tipo
 selectionType.addEventListener('change', function (){
     selectedType = this.options[this.selectedIndex].value;
-    percentagesByPokemon.innerHTML= "Number of pokemons with this type:" + computeType(allPokemon, selectedType)  
-    if(selectedType === ""){
+    percentagesByPokemon.innerHTML= "Percentage of pokemons with this type: " + computeType(allPokemon, selectedType)  
+        if(selectedType === ""){
             container.innerHTML=pokemonCards.join('');
             percentagesByPokemon.innerHTML = ''
         } else {
-            return container.innerHTML= createFilteredCards(filterByType(allPokemon, selectedType)).join('')             
+            let filteredArr = filterByType(allPokemon, selectedType)
+            container.innerHTML= createFilteredCards(filteredArr).join('')           
         }
     }
 )
 
+//Función para ordenar los pokemon
 sortPoke.addEventListener('change',function(){
     let selectSort= this.options[this.selectedIndex].value;
         if(selectedType === ""){
@@ -67,7 +61,7 @@ sortPoke.addEventListener('change',function(){
         }      
     }    
 )
-
+//Función para la barra de búsqueda por nombre
 searchInput.addEventListener('input', () => {
   const inputValue = searchInput.value.toLowerCase();
   const result =pokeSearch(allPokemon, inputValue);
@@ -81,7 +75,7 @@ searchInput.addEventListener('input', () => {
     }
 );
 
-//Armando el modal
+//Creación del modal
 
 container.addEventListener('click', function(event){
     let target=event.target;
@@ -90,9 +84,10 @@ container.addEventListener('click', function(event){
         return
     } else {
         document.querySelector(".modal").style.display = "block";    
-        let selectedPokemon = pokeSearch(allPokemon,target.className);
+        let selectedPokemon = pokeSearch(allPokemon, target.className);
         modalContainer.innerHTML=createModal(selectedPokemon[0]);
     }
+    
     let close= document.getElementById('close');
     close.addEventListener('click', function(){
             document.querySelector(".modal").style.display = "none"
@@ -100,7 +95,3 @@ container.addEventListener('click', function(event){
     );
   }
 )
-
-
-
-  //Fin del armado del modal
