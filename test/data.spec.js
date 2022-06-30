@@ -66,7 +66,7 @@ describe('pokeSearch', () => {
   it('pokeSearch is a function', () => {
     expect(typeof pokeSearch).toBe('function')
   })
-  it('cuando ingrese "pid" en el buscador debe contener pidgey', () => {
+  it('cuando se busque pid en el buscador debe contener pidgey', () => {
     expect(pokeSearch(allPokemon, 'pid')[0]).toEqual(
       expect.objectContaining({
         name: 'pidgey'
