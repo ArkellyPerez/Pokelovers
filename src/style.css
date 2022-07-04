@@ -5,45 +5,73 @@ html, body {
     color: #F0F8FF;
     margin: 0;
     padding: 0;
+}
+
+body{
     background-image: url("https://i.ibb.co/CMLm0mJ/nature-sky-moonlight-cloud-flower-pokemon-575486-wallhere-com.jpg");
     background-attachment: fixed;
     background-size: cover;
+    width: 100%;
+    height: auto;
 }
 
 .formWelcome{
-    background-image: url("https://i.ibb.co/PMDsSWp/TAU50N.jpg");
-    background-size: cover;
+    /*background-image: url("https://i.ibb.co/PMDsSWp/TAU50N.jpg");
+    background-size: cover;*/
     display: flex;
     background-position: center center;
     justify-content: center;
-    min-height: 100vh; 
+    align-items: center;
+    margin: 0 auto;
+    min-height: 100vh;
     background-attachment: fixed;
  }
 
  .formLogin{
-    background-color:rgba(247, 253, 253, 0.7);
-    width: 500px;
-    height: 500px;
+    width: 50%;
+    height: 80%;
     margin: auto;
+    padding: 4rem 1rem;
+    background-color:rgba(247, 253, 253, 0.7);
     border-radius: 6px;
-    font-size: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;   
-    padding: 1rem;
+    align-items: center;  
+}
+
+.formTitle{
+    margin: 1rem 0;
+}
+.formLogin h1{
+    color: #24437A;
+    font-size: 20px;
+    margin: 1rem 0;
+}
+
+.formLogin p {
+    visibility: hidden;
+    color: #24437A;
+    margin: 0
+}
+
+#goPokedex{
+    color: #F0F8FF;
+    font-weight: 500;
+    background: #273082;
+    border: none;
+}
+
+#goPokedex:hover{
+    background: #232055;
 }
 
 .header{
     background-color: #232055;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-}
-
-#title{
-    margin: auto;
-    font-size: 3rem;
 }
 
 #userSelection{
@@ -54,6 +82,22 @@ html, body {
     background-color: #273082;
 }
 
+#goPokedex, input {
+    border-radius: 15px;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+input, .onePokemon {
+    background-color: #F0F8FF;
+    border: 0;
+}
+
+#pokedex{
+    display: none;
+}
+
 select{
     text-align: left;
     padding: 0.5rem;
@@ -62,36 +106,16 @@ select{
     border: 0;
     color: #F0F8FF; 
     font-size: 16px;
+    cursor: pointer;
 }
-
-input {
-    background-color: #F0F8FF;
-    padding: 2px 4px;
-    border-radius: 6px;
-    border: 0;
-}
-
-.card-search{
-    float: right;
-}
-
-#greetings{
-    float: left;
-}
-
-#pokedex{
-    display: none;
-}
-
 .pokemonContainer{
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-evenly;
+   justify-content: space-around;
    padding: 0 2rem;
 }
 
 .onePokemon{
-    background-color: #F0F8FF ;
     height: auto;
     width: 200px;
     margin: 0.8rem;
@@ -103,7 +127,6 @@ input {
     border-radius: 6px;
     color: #24437A;
     font-weight: bold;
-    border: 0;
 }
 
 .onePokemon img{
@@ -117,7 +140,7 @@ input {
 
 #pokemonName{
     font-size: 14px;
-    padding: 0 2.5rem 1rem 2.5rem;
+    padding: 1rem 2.5rem 0 2.5rem;
     margin: 0
 }
 
@@ -206,3 +229,95 @@ td{
     margin: 0.5rem;
 }
 
+.go-top-container{
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    width: 4rem;
+    height: 4rem;
+    z-index: -1;
+}
+
+.go-top-buttom{
+    position: relative;
+    width: 0;
+    height: 0;
+    background: #24437A;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.go-top-buttom p{
+    font-weight: bolder;
+    color: #F0F8FF;
+    font-size: 1.5rem;
+    transition: 0.3s;
+    margin: 0;
+    visibility: hidden;
+}
+
+.show{
+    z-index: 10;
+}
+
+.show .go-top-buttom{
+    animation: popup .3s ease-in-out;
+    width: 4rem;
+    height: 4rem;
+    z-index: 11;
+}
+
+.show p{
+    transform: translateY(-5%) scale(1);
+    transition: 0.3s;
+    visibility: visible;
+}
+
+@keyframes popup {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    50%{
+        width: 6rem;
+        height: 6rem;
+    }
+    100%{
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    *{
+        font-size: 15px;
+    }
+    .header{
+        flex-direction: column;
+    }
+    .header img{
+        margin: 1rem 0;
+    }
+    .formTitle{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    *{
+        font-size: 14px;
+    }
+    .formLogin{
+        width: 80%;
+        padding: 9rem 2rem;
+    }
+    .onePokemon{
+        width: 172px;
+    }
+}

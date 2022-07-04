@@ -24,7 +24,6 @@ describe('createModal', () => {
   it('createModal is a function', () => {
     expect(typeof createModal).toBe('function')
   })
-  it('')
 })
 
 describe('filterByType', () => {
@@ -47,8 +46,8 @@ describe('createFilteredCards', () => {
   it('para el pokemon "lapras" devuelve el código de su botón', ()=>{
     expect(createFilteredCards(filterByType(allPokemon, 'ice'))[3]).toEqual(`
     <button class="onePokemon">
-      <img class=lapras alt="This is a pokemon" src="https://www.serebii.net/pokemongo/pokemon/131.png">
       <p class=lapras id="pokemonName"> 131 Lapras </p>
+      <img class=lapras alt="This is a pokemon" src="https://www.serebii.net/pokemongo/pokemon/131.png">
     </button>`)
   })
 })
