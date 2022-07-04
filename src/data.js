@@ -64,7 +64,7 @@ export const createFilteredCards = function(filterArr){
   return newCards
 }
 
-export const pokeSearch = (allPokemon,name) => {
+export const pokeSearch = (allPokemon, name) => {
   let searchPokeName=allPokemon.filter(function(pokemon) {
     return pokemon.name.startsWith(name);
   })

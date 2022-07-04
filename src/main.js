@@ -25,6 +25,9 @@ goPokedex.addEventListener('click', (event) => {
         document.querySelector(".formWelcome").style.display = "none";
         document.getElementById("pokedex").style.display = "block"; 
         document.getElementById("greetings").innerHTML = "Welcome, " + userName + "!"
+    } else {
+        document.getElementById('nameMessage').style.visibility = 'visible'
+        document.getElementById('nameMessage').innerHTML='Please, enter your name'
     }
 })
 
@@ -34,6 +37,21 @@ const pokemonCards = allPokemon.map(function(pokemon){
 })
 
 container.insertAdjacentHTML("afterbegin", pokemonCards.join(''))
+
+window.onscroll = function(){
+    if(document.documentElement.scrollTop>100){
+        document.querySelector('.go-top-container').classList.add('show')
+    } else {
+        document.querySelector('.go-top-container').classList.remove('show')  
+    }
+};
+
+document.querySelector('.go-top-container').addEventListener('click', () =>{
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+})
 
 let selectedType='';
 
@@ -57,7 +75,8 @@ sortPoke.addEventListener('change',function(){
         if(selectedType === ""){
             return container.innerHTML= createFilteredCards(sort(allPokemon,selectSort)).join('')
         } else {
-                return container.innerHTML= createFilteredCards(sort(filterByType(allPokemon, selectedType), selectSort)).join('')
+            let filteredArr = filterByType(allPokemon, selectedType)    
+            return container.innerHTML= createFilteredCards(sort(filteredArr, selectSort)).join('')
         }      
     }    
 )
@@ -76,7 +95,6 @@ searchInput.addEventListener('input', () => {
 );
 
 //Creación del modal
-
 container.addEventListener('click', function(event){
     let target=event.target;
         console.log(target.className);

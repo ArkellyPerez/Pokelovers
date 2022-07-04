@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokelovers</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -10,9 +10,10 @@
 <body>
   <section class="formWelcome">
     <form class="formLogin">
-      <img src="https://fontmeme.com/permalink/220630/8e1178d1f57ec86fe8bdf7ebf1fd6945.png" alt="fuente-pokemon">
+      <img class="formTitle" src="https://fontmeme.com/permalink/220630/8e1178d1f57ec86fe8bdf7ebf1fd6945.png" alt="fuente-pokemon">
       <h1> Welcome home, trainer!</h1>
       <input type="text" id="userName" class="input" placeholder="Your name" >
+      <p id="nameMessage"> Your name </p>
       <button id="goPokedex"> Go to Pokedex! </button>
     </form>
   </section>
@@ -20,7 +21,7 @@
   <section id="pokedex">
     <header class="header">
       <p id="greetings"> </p>
-      <h2 id="title"><img src="https://fontmeme.com/permalink/220630/b42f143c03e26524c2415c9e16ce2c17.png" alt="fuente-de-cuphead"></h2>
+      <img src="https://fontmeme.com/permalink/220630/b42f143c03e26524c2415c9e16ce2c17.png" alt="fuente-de-cuphead">
       <section id="pokeSearch">
         <input type="search" placeholder="Search your pokemon..." class="card-search">
       </section>
@@ -56,17 +57,20 @@
         <option value="sortAscending">Sort Ascending</option>
         <option value="sortDescending">Sort Descending</option>
       </select>
-
     </div>
 
     <p class="percentage"> </p>
    
     <div class="containerContainer"> <!--contenedor de tarjetas y modales-->
       <div class="modal" ><!--modal-->
-        <div class="modalContainer"><!--Contenedor del modal-->
-        </div>
+        <div class="modalContainer"></div><!--Contenedor del modal--> 
       </div>
-      <div class="pokemonContainer"><!--Contenedor de tarjetas de pokemon-->
+      <div class="pokemonContainer"></div><!--Contenedor de tarjetas de pokemon-->
+    </div>
+
+    <div class="go-top-container">
+      <div class="go-top-buttom">
+        <p>▲</p>
       </div>
     </div>
   </section>
