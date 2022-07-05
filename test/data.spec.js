@@ -78,4 +78,12 @@ describe('sort', () => {
   it('sort is a function', () => {
     expect(typeof sort).toBe('function')
   })
+  it('Ordena segun lo fultrado', () => {
+    expect(pokeSearch(allPokemon, 'pid')[0]).toEqual(
+      expect.objectContaining({
+        name: 'pidgey'
+      })
+    )
+  })
+
 })
