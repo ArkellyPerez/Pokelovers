@@ -53,10 +53,6 @@ const pokemonCards = allPokemon.map(function(pokemon){
     return createPokemonCard(pokemon)
 })
 
-
-
-
-
 container.insertAdjacentHTML("afterbegin", pokemonCards.join(''))
 
 window.onscroll = function(){
@@ -115,7 +111,6 @@ searchInput.addEventListener('input', () => {
     }
 );
 
-
 const createModal = function(pokemon){
     const {num, name, size:{height, weight}, encounter, img, type, generation, about, resistant, weaknesses} = pokemon;
     return `
@@ -166,8 +161,6 @@ container.addEventListener('click', function(event){
         let selectedPokemon = pokeSearch(allPokemon,'num',target.className);
         //console.log(selectedPokemon);
         modalContainer.innerHTML=createModal(selectedPokemon[0]);
-  
-     
     }
     
     let close= document.getElementById('close');
