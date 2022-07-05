@@ -1,4 +1,4 @@
-import {createPokemonCard, filterByType, sort, createFilteredCards, pokeSearch, createModal, computeType, allPokemon} from './data.js';
+import { filterByType, sort, pokeSearch, computeType, allPokemon} from './data.js';
 
 //import data from './data/pokemon/pokemon.js';
 
@@ -31,10 +31,31 @@ goPokedex.addEventListener('click', (event) => {
     }
 })
 
+const createPokemonCard = function(pokemon) { //Recibe un objeto del array 
+    const {img, num, name} = pokemon //Se accede a la imagen, número y nombre del Pokemon
+      return `
+      <button class="onePokemon">
+        <p class=${num} id="pokemonName"> ${num} ${name.charAt(0).toUpperCase()+ name.slice(1)} </p>
+        <img class=${num} alt="This is a pokemon" src="${img}">
+      </button>`
+  }
+  
+  const createFilteredCards = function(filterArr){
+    let newCards = filterArr.map(function(pokemon){
+      return createPokemonCard(pokemon)
+    })
+    return newCards
+  }
+
+
 //Función para crear las cartas de pokemon
 const pokemonCards = allPokemon.map(function(pokemon){ 
     return createPokemonCard(pokemon)
 })
+
+
+
+
 
 container.insertAdjacentHTML("afterbegin", pokemonCards.join(''))
 
@@ -83,7 +104,7 @@ sortPoke.addEventListener('change',function(){
 //Función para la barra de búsqueda por nombre
 searchInput.addEventListener('input', () => {
   const inputValue = searchInput.value.toLowerCase();
-  const result =pokeSearch(allPokemon, inputValue);
+  const result =pokeSearch(allPokemon,'name', inputValue);
         if (inputValue.length > 0 && result.length > 0) {
             container.innerHTML= (createFilteredCards(result)).join('');
         } else if (inputValue.length > 0 && result.length === 0) {
@@ -94,16 +115,59 @@ searchInput.addEventListener('input', () => {
     }
 );
 
+
+const createModal = function(pokemon){
+    const {num, name, size:{height, weight}, encounter, img, type, generation, about, resistant, weaknesses} = pokemon;
+    return `
+    <button id="close">X</button>
+    <p id=pokemonNameInModal>${num} ${name.charAt(0).toUpperCase()+ name.slice(1)}</p>
+    <div class="tableAndPokemon">
+      <table class="statsPokemon">
+        <tr class="height">
+          <th>Height</th>
+          <td>${height}</td>
+        </tr>
+        <tr class="weight">
+          <th>Weight</th>
+          <td>${weight}</td>
+        </tr>
+        <tr class="spawn-chance">
+          <th>Spawn chance</th>
+          <td>${(pokemon['spawn-chance']*100).toFixed(2)+"%"}</td>
+        </tr>
+        <tr class="base-flee-rate">
+          <th>Base flee rate</th>
+          <td>${(encounter['base-flee-rate']*100).toFixed(2)+"%"}</td>
+        </tr>
+        <tr class="base-capture-rate">
+          <th>Base capture rate</th>
+          <td>${(encounter['base-capture-rate']*100).toFixed(2)+"%"}</td>
+        </tr>
+      </table>
+      <div class="imgAndType">
+        <img alt="This is a pokemon" src=${img}>
+        <p> Type: ${type} </p>
+        <p> ${generation.num.charAt(0).toUpperCase()+ generation.num.slice(1)}: ${generation.name.charAt(0).toUpperCase()+ generation.name.slice(1)}</p>
+      </div>
+    </div>
+    <p>${about}</p>
+    <p>Resistant: ${resistant}</p>
+    <p>Weaknesses: ${weaknesses}</p>`
+  }
+
 //Creación del modal
 container.addEventListener('click', function(event){
     let target=event.target;
-        console.log(target.className);
+      //  console.log(target.className);
     if(target.className === 'pokemonContainer'|| target.className ==='onePokemon') {
         return
     } else {
         document.querySelector(".modal").style.display = "block";    
-        let selectedPokemon = pokeSearch(allPokemon, target.className);
+        let selectedPokemon = pokeSearch(allPokemon,'num',target.className);
+        //console.log(selectedPokemon);
         modalContainer.innerHTML=createModal(selectedPokemon[0]);
+  
+     
     }
     
     let close= document.getElementById('close');
@@ -113,3 +177,4 @@ container.addEventListener('click', function(event){
     );
   }
 )
+
