@@ -77,11 +77,11 @@ En cuanto a las paleta de colores, inicialmente decidimos usar tonos pasteles re
 
 Vista general de la página
 
-<img src="https://i.ibb.co/LQrFJ8P/poke3.jpg">
+<img src="https://i.ibb.co/LQrFJ8P/poke3.jpg" alt="imagen-pagina">
 
 Vista y distribución del modal
 
-<img src="https://i.ibb.co/BLPNr1t/pok4.jpg>
+<img src="https://i.ibb.co/BLPNr1t/pok4.jpg" alt="imagen-modal">
 
 ## 5. Checklist
 
