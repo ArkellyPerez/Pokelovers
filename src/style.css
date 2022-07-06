@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani&family=Roboto:wght@300&display=swap');
 
 html, body {
-    font-family: 'Roboto', sans-serif;;
+    font-family: 'Roboto', sans-serif;
     color: #F0F8FF;
     margin: 0;
     padding: 0;
@@ -330,3 +330,27 @@ td{
         font-size: 12px;
     }
 }
+
+.footer-info {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  
+    
+  }
+
+  .footer-info span,a{
+    font-family: 'Roboto', sans-serif;
+    font-style: bold;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 35px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: white;
+   
+  }
+
+  .footer-info a:hover {
+    color: #ead7a5;
+  }
