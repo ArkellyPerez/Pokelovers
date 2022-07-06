@@ -73,9 +73,15 @@ Vista y distribución del modal
 ## 4. Diseño de alta fidelidad 
 
 Realizammos el sketch en hojas, de acuerdo a la organización que le quisimos dar a nuestro proyecto, definimos una vista limpia y bien distribuida, con una barra de búsqueda y una para filtrado.
+En cuanto a las paleta de colores, inicialmente decidimos usar tonos pasteles relacionados a pokemon go, que luego fueron cambiados a tonalidades azules, que le dieron un aspecto sobrio y ordenado.
 
-<img src="https://i.ibb.co/zRTCdc0/poke2.jpg">
+Vista general de la página
 
+<img src="https://i.ibb.co/LQrFJ8P/poke3.jpg" alt="imagen-pagina">
+
+Vista y distribución del modal
+
+<img src="https://i.ibb.co/BLPNr1t/pok4.jpg" alt="imagen-modal">
 
 ## 5. Checklist
 

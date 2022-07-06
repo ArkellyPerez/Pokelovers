@@ -1,7 +1,5 @@
 import data from './data/pokemon/pokemon.js';
 
-
-
 export const filterByType = function (allPokemon, type) {
   let pokemonByType = allPokemon.filter(function (pokemon) {
     if (pokemon.type.includes(type)) {

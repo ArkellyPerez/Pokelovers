@@ -44,7 +44,7 @@ const createPokemonCard = function(pokemon) { //Recibe un objeto del array y cre
 const pokemonCards = allPokemon.map(function(pokemon){ 
     return createPokemonCard(pokemon)
 }) 
-  
+
 container.insertAdjacentHTML("afterbegin", pokemonCards.join(''))
 
 window.onscroll = function(){
@@ -162,6 +162,7 @@ container.addEventListener('click', function(event){
         let selectedPokemon = pokeSearch(allPokemon,'num',target.className);
         //console.log(selectedPokemon);
         modalContainer.innerHTML=createModal(selectedPokemon[0]);  
+
     }
     
     let close= document.getElementById('close');
