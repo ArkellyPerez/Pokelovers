@@ -14,7 +14,7 @@ const searchInput = document.querySelector('.card-search'); //Input para buscar
 
 const goPokedex = document.getElementById("goPokedex"); //Botón de inicio
 
-const percentagesByPokemon = document.querySelector(".percentage");
+const percentagesByPokemon = document.querySelector(".percentage"); //Párrafo que muestra el porcentaje
 
 const modalContainer = document.querySelector('.modalContainer'); //Contenedor donde van los modales
 
@@ -31,27 +31,19 @@ goPokedex.addEventListener('click', (event) => {
     }
 })
 
-const createPokemonCard = function(pokemon) { //Recibe un objeto del array 
+const createPokemonCard = function(pokemon) { //Recibe un objeto del array y crea un string de código
     const {img, num, name} = pokemon //Se accede a la imagen, número y nombre del Pokemon
       return `
       <button class="onePokemon">
         <p class=${num} id="pokemonName"> ${num} ${name.charAt(0).toUpperCase()+ name.slice(1)} </p>
-        <img class=${num} alt="This is a pokemon" src="${img}">
+        <img class=${num} alt=${name} src="${img}">
       </button>`
   }
-  
-  const createFilteredCards = function(filterArr){
-    let newCards = filterArr.map(function(pokemon){
-      return createPokemonCard(pokemon)
-    })
-    return newCards
-  }
-
 
 //Función para crear las cartas de pokemon
 const pokemonCards = allPokemon.map(function(pokemon){ 
     return createPokemonCard(pokemon)
-})
+}) 
 
 container.insertAdjacentHTML("afterbegin", pokemonCards.join(''))
 
@@ -70,6 +62,13 @@ document.querySelector('.go-top-container').addEventListener('click', () =>{
     })
 })
 
+const createFilteredCards = function(filterArr){
+    let newCards = filterArr.map(function(pokemon){
+      return createPokemonCard(pokemon)
+    })
+   return newCards
+ }
+
 let selectedType='';
 
 //Función para filtrar por tipo
@@ -81,7 +80,8 @@ selectionType.addEventListener('change', function (){
             percentagesByPokemon.innerHTML = ''
         } else {
             let filteredArr = filterByType(allPokemon, selectedType)
-            container.innerHTML= createFilteredCards(filteredArr).join('')           
+            container.innerHTML= createFilteredCards(filteredArr).join('');
+            sortPoke.selectedIndex=0         
         }
     }
 )
@@ -90,13 +90,14 @@ selectionType.addEventListener('change', function (){
 sortPoke.addEventListener('change',function(){
     let selectSort= this.options[this.selectedIndex].value;
         if(selectedType === ""){
-            return container.innerHTML= createFilteredCards(sort(allPokemon,selectSort)).join('')
+           container.innerHTML= createFilteredCards(sort(allPokemon,selectSort)).join('')
         } else {
             let filteredArr = filterByType(allPokemon, selectedType)    
-            return container.innerHTML= createFilteredCards(sort(filteredArr, selectSort)).join('')
+           container.innerHTML= createFilteredCards(sort(filteredArr, selectSort)).join('')
         }      
     }    
 )
+
 //Función para la barra de búsqueda por nombre
 searchInput.addEventListener('input', () => {
   const inputValue = searchInput.value.toLowerCase();
@@ -160,7 +161,8 @@ container.addEventListener('click', function(event){
         document.querySelector(".modal").style.display = "block";    
         let selectedPokemon = pokeSearch(allPokemon,'num',target.className);
         //console.log(selectedPokemon);
-        modalContainer.innerHTML=createModal(selectedPokemon[0]);
+        modalContainer.innerHTML=createModal(selectedPokemon[0]);  
+
     }
     
     let close= document.getElementById('close');
@@ -170,4 +172,3 @@ container.addEventListener('click', function(event){
     );
   }
 )
-

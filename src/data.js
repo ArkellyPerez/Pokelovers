@@ -9,7 +9,7 @@ export const filterByType = function (allPokemon, type) {
   return pokemonByType
 }
 
-export const pokeSearch = (allPokemon,prop, name) => {
+export const pokeSearch = (allPokemon, prop, name) => {
   let searchPokeName=allPokemon.filter(function(pokemon) {
     return pokemon[prop].startsWith(name);
   })
