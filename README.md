@@ -15,7 +15,7 @@ El público objetivo de nuestro proyecto son los jugadores de pokemon go que des
 
 El proyecto fue diseñado para una óptima búsqueda de pokemons por generación, tipo, nombre o número. Adicionalmente, muestra cuál es el porcentaje de pokemon que se encuentra dentro de cada tipo. Por último, muestra datos relevantes de cada pokemon, lo cual ayudará al jugador a validar las fortalezas y debilidades de los pokemon seleccionados y tomar mejores decisiones al momento de luchar por gimnasios. 
 
-<img src="https://i.ibb.co/XVc11CP/pokemon-go-2392325.webp">
+<img href="https://i.ibb.co/XVc11CP/pokemon-go-2392325.webp">
 
 
 ## 2. Historias de usuario

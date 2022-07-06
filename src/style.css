@@ -162,8 +162,8 @@ select{
     bottom: 0;
     background-color: #24437A;
     width:70%;
-    height: 60%;
-    padding: 2%;
+    height: fit-content;
+    padding: 1rem;
     border-radius: 10px;
     margin: auto;
 }
@@ -191,6 +191,9 @@ select{
     font-weight: bold;
     padding: 0;
     border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #close:hover{
@@ -200,14 +203,13 @@ select{
 .tableAndPokemon{
     display: flex;
     justify-content: space-around;
-    margin: 2rem 0
+    margin: 2rem 0;
 }
 
 table{
    border-collapse: collapse;
    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
    font-size: 14px;
-   
 }
 
 td, th{
@@ -227,6 +229,7 @@ td{
 
 .imgAndType p{
     margin: 0.5rem;
+    text-align: center;
 }
 
 .go-top-container{
@@ -319,5 +322,11 @@ td{
     }
     .onePokemon{
         width: 172px;
+    }
+    .modalContainer{
+        width: 80%;
+    }
+    td, th{
+        font-size: 12px;
     }
 }
