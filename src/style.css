@@ -329,6 +329,9 @@ td{
     td, th{
         font-size: 12px;
     }
+    .footer-info span, a{
+        font-size: 0.75em;
+    }
 }
 
 .footer-info {
@@ -336,14 +339,12 @@ td{
     gap: 20px;
     justify-content: center;
   
-    
   }
 
   .footer-info span,a{
     font-family: 'Roboto', sans-serif;
     font-style: bold;
     font-weight: 600;
-    font-size: 18px;
     line-height: 35px;
     letter-spacing: 0.02em;
     text-decoration: none;
