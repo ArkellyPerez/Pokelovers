@@ -90,7 +90,7 @@ selectionType.addEventListener('change', function (){
 sortPoke.addEventListener('change',function(){
     let selectSort= this.options[this.selectedIndex].value;
         if(selectedType === ""){
-           container.innerHTML= createFilteredCards(sort(allPokemon,selectSort)).join('')
+           container.innerHTML= createFilteredCards(sort(allPokemon, selectSort)).join('')
         } else {
             let filteredArr = filterByType(allPokemon, selectedType)    
            container.innerHTML= createFilteredCards(sort(filteredArr, selectSort)).join('')
