@@ -107,8 +107,7 @@ searchInput.addEventListener('input', () => {
             document.querySelector('.pikGif').style.display = "none";
         } else if (inputValue.length > 0 && result.length === 0) {
             container.textContent = 'The data of this pokemon is not currently available';
-            document.querySelector('.pikGif').style.display = "block"; 
-            
+            document.querySelector('.pikGif').style.display = "flex"; 
         } else {
             container.innerHTML= (createFilteredCards(result)).join('');
             document.querySelector('.pikGif').style.display = "none";
@@ -166,7 +165,6 @@ container.addEventListener('click', function(event){
         let selectedPokemon = pokeSearch(allPokemon,'num',target.className);
         //console.log(selectedPokemon);
         modalContainer.innerHTML=createModal(selectedPokemon[0]);  
-
     }
     
     let close= document.getElementById('close');
