@@ -343,8 +343,15 @@ td{
 .pikGif {
     display: none;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    margin: 1rem 0 9rem 0;
+    height: auto;
+    margin: 1rem 0 6rem 0;
+}
+
+.pikGif img {
+    width: 50%;
+    height: auto;
 }
   
 @media screen and (max-width:768px) {
@@ -381,6 +388,12 @@ td{
     }
     td, th{
         font-size: 12px;
+    }
+    .pikGif{
+        margin: 1rem 0 5rem 0;
+    }
+    .pikGif img{
+        width: 80%;
     }
     .footer-info span, a{
         font-size: 0.75em;
