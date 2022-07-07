@@ -162,7 +162,7 @@ container.addEventListener('click', function(event){
     if(target.className === 'pokemonContainer'|| target.className ==='onePokemon') {
         return
     } else {
-        document.querySelector(".modal").style.display = "block";    
+        document.querySelector(".modal").style.display = "flex";    
         let selectedPokemon = pokeSearch(allPokemon,'num',target.className);
         //console.log(selectedPokemon);
         modalContainer.innerHTML=createModal(selectedPokemon[0]);  
