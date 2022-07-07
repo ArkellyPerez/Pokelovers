@@ -373,7 +373,13 @@ td{
     color: white;
    
   }
-
   .footer-info a:hover {
     color: #ead7a5;
+  }
+  .pikGif {
+    display: none;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 9rem;
   }

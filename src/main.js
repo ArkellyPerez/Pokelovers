@@ -104,10 +104,14 @@ searchInput.addEventListener('input', () => {
   const result =pokeSearch(allPokemon,'name', inputValue);
         if (inputValue.length > 0 && result.length > 0) {
             container.innerHTML= (createFilteredCards(result)).join('');
+            document.querySelector('.pikGif').style.display = "none";
         } else if (inputValue.length > 0 && result.length === 0) {
             container.textContent = 'The data of this pokemon is not currently available';
+            document.querySelector('.pikGif').style.display = "block"; 
+            
         } else {
             container.innerHTML= (createFilteredCards(result)).join('');
+            document.querySelector('.pikGif').style.display = "none";
         }
     }
 );
