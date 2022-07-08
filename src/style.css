@@ -16,8 +16,6 @@ body{
 }
 
 .formWelcome{
-    /*background-image: url("https://i.ibb.co/PMDsSWp/TAU50N.jpg");
-    background-size: cover;*/
     display: flex;
     background-position: center center;
     justify-content: center;
@@ -25,7 +23,7 @@ body{
     margin: 0 auto;
     min-height: 100vh;
     background-attachment: fixed;
- }
+}
 
  .formLogin{
     width: 50%;
@@ -43,10 +41,12 @@ body{
 .formTitle{
     margin: 1rem 0;
 }
+
 .formLogin h1{
     color: #24437A;
     font-size: 20px;
     margin: 1rem 0;
+    text-align: center;
 }
 
 .formLogin p {
@@ -109,7 +109,7 @@ select{
     text-align: center;
     cursor: pointer;
 }
-.pokemonContainer{
+.cardsContainer{
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
@@ -234,7 +234,7 @@ td{
     text-align: center;
 }
 
-.go-top-container{
+.goTopContainer{
     position: fixed;
     right: 2rem;
     bottom: 2rem;
@@ -243,7 +243,7 @@ td{
     z-index: -1;
 }
 
-.go-top-buttom{
+.goTopButtom{
     position: relative;
     width: 0;
     height: 0;
@@ -258,7 +258,7 @@ td{
     justify-content: center;
 }
 
-.go-top-buttom p{
+.goTopButtom p{
     font-weight: bolder;
     color: #F0F8FF;
     font-size: 1.5rem;
@@ -271,7 +271,7 @@ td{
     z-index: 10;
 }
 
-.show .go-top-buttom{
+.show .goTopButtom{
     animation: popup .3s ease-in-out;
     width: 4rem;
     height: 4rem;
@@ -299,48 +299,26 @@ td{
     }
 }
 
-.footer-info {
+.footerInfo {
     display: flex;
     gap: 20px;
     justify-content: center;
 }
 
-.footer-info span, a {
-    font-style: bold;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 35px;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    color: white;
-}
-
-.footer-info a:hover {
-    color: #ead7a5;
-}
-
-.footer-info {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  
-  }
-
-.footer-info span,a{
-    font-family: 'Roboto', sans-serif;
+.footerInfo span, a {
     font-style: bold;
     font-weight: 600;
     line-height: 35px;
     letter-spacing: 0.02em;
     text-decoration: none;
     color: white;
-   
 }
-.footer-info a:hover {
+
+.footerInfo a:hover {
     color: #ead7a5;
 }
 
-.pikGif {
+.gif {
     display: none;
     justify-content: center;
     align-items: center;
@@ -349,7 +327,7 @@ td{
     margin: 1rem 0 6rem 0;
 }
 
-.pikGif img {
+.gif img {
     width: 50%;
     height: auto;
 }
@@ -367,7 +345,7 @@ td{
     .formTitle{
         width: 100%;
     }
-    .pikGif {
+    .gif {
         width: 100%;
     }
 }
@@ -389,10 +367,10 @@ td{
     td, th{
         font-size: 12px;
     }
-    .pikGif{
+    .gif{
         margin: 1rem 0 5rem 0;
     }
-    .pikGif img{
+    .gif img{
         width: 80%;
     }
     .footer-info span, a{
