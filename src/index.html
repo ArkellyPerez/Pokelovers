@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokelovers</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <section class="formWelcome">
     <form class="formLogin">
@@ -17,16 +15,14 @@
       <button id="goPokedex"> Go to Pokedex! </button>
     </form>
   </section>
-
   <section id="pokedex">
     <header class="header">
       <p id="greetings"> </p>
-      <img src="https://fontmeme.com/permalink/220630/b42f143c03e26524c2415c9e16ce2c17.png" alt="fuente-de-cuphead">
-      <section id="pokeSearch">
+      <img src="https://fontmeme.com/permalink/220630/b42f143c03e26524c2415c9e16ce2c17.png" alt="Pokedex">
+      <section>
         <input type="search" placeholder="Search your pokemon..." class="card-search">
       </section>
     </header>
-
     <div id="userSelection">
       <select class="selectionByType">
         <option disabled selected>Filter by</option>
@@ -50,7 +46,7 @@
         <option value="steel">Steel</option>
         <option value="normal">Normal</option>
       </select>
-      <select class="sort">
+      <select class="sortData">
         <option disabled selected>Sort by</option>
         <option value="orderAtoZ">Order A to Z</option>
         <option value="orderZtoA">Order Z to A</option>
@@ -58,37 +54,30 @@
         <option value="sortDescending">Sort Descending</option>
       </select>
     </div>
-
     <p class="percentage"> </p>
-   
-    <div class="containerContainer"> <!--contenedor de tarjetas y modales-->
-      <div class="modal" ><!--modal-->
+    <section id="pageContainer"> <!--Contenedor de tarjetas y modales-->
+      <div class="modal" ><!--Modal-->
         <div class="modalContainer"></div><!--Contenedor del modal--> 
       </div>
-      <div class="pokemonContainer"></div><!--Contenedor de tarjetas de pokemon-->
-      <div  class="pikGif" > <img src="https://i.ibb.co/jHHhGp7/WZhk.gif"  alt="pikachuGif"></div>
-    </div>
-
-
-
-    <div class="go-top-container">
-      <div class="go-top-buttom">
+      <div class="cardsContainer"></div><!--Contenedor de tarjetas de pokemon-->
+      <div  class="gif" > 
+        <img src="https://i.ibb.co/jHHhGp7/WZhk.gif"  alt="Pikachu Gif">
+      </div>
+    </section>
+    <div class="goTopContainer">
+      <div class="goTopButtom">
         <p>▲</p>
       </div>
     </div>
   </section>
-
   <footer>
-    
-    <div class="footer-info">
+    <div class="footerInfo">
       <span>Esta página fue desarrollada por:</span>
       <a href="https://github.com/lxsca00" target="_blank ">lxsca00</a>
       <a href ="https://github.com/FiorellaCole" target="_blank ">FiorellaCole</a>
       <a href="https://github.com/ArkellyPerez" target="_blank ">ArkellyPerez</a>
     </div>
   </footer>
-  
   <script src="main.js" type="module"></script>
 </body>
-
 </html>

@@ -16,19 +16,19 @@ export const pokeSearch = (allPokemon, prop, name) => {
   return searchPokeName;
 }
 
-export const sort = function (selectionTypeArray1,SelectSort) {
+export const sort = function (array, selectSort) {
   let sortPokemon='';
-  if(SelectSort=="orderAtoZ"){ 
-    sortPokemon= selectionTypeArray1.sort((a, b) => a.name.localeCompare(b.name));
+  if(selectSort=="orderAtoZ"){ 
+    sortPokemon= array.sort((pokemonA, pokemonB) => pokemonA.name.localeCompare(pokemonB.name));
   }
-  if(SelectSort=="orderZtoA"){ 
-    sortPokemon= selectionTypeArray1.sort((a, b) => b.name.localeCompare(a.name));
+  if(selectSort=="orderZtoA"){ 
+    sortPokemon= array.sort((pokemonA, pokemonB) => pokemonB.name.localeCompare(pokemonA.name));
   }
-  if(SelectSort=="sortAscending"){ 
-    sortPokemon= selectionTypeArray1.sort((a, b) => a.num-b.num);
+  if(selectSort=="sortAscending"){ 
+    sortPokemon= array.sort((pokemonA, pokemonB) => pokemonA.num-pokemonB.num);
   }
-  if(SelectSort=="sortDescending"){ 
-    sortPokemon= selectionTypeArray1.sort((a, b) => b.num-a.num);
+  if(selectSort=="sortDescending"){ 
+    sortPokemon= array.sort((pokemonA, pokemonB) => pokemonB.num-pokemonA.num);
   }
   return sortPokemon;
 }; 
