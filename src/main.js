@@ -31,11 +31,18 @@ const createPokemonCard = function(pokemon) {
       </button>`  
 }
 //Función para iterar y crear las cartas de todos los pokemon
-const pokemonCards = allPokemon.map(function(pokemon){ 
+/*const pokemonCards = allPokemon.map(function(pokemon){ 
     return createPokemonCard(pokemon)
-}) 
+}) */
 
-cardsContainer.insertAdjacentHTML("afterbegin", pokemonCards.join(''))
+const pokemonCards = function(pokemonArray){
+  let cards= pokemonArray.map(function(pokemon){
+    return createPokemonCard(pokemon)
+  })
+  return cards
+}
+
+cardsContainer.insertAdjacentHTML("afterbegin", pokemonCards(allPokemon).join(''))
 
 //Mostrar y ocultar botón de regresar arriba
 window.onscroll = function(){
@@ -53,12 +60,12 @@ document.querySelector('.goTopContainer').addEventListener('click', () =>{
     })
 })
 //Función para crear el string de código de las cartas filtradas
-const createFilteredCards = function(filterArray){
+/*const createFilteredCards = function(filterArray){
     let newCards = filterArray.map(function(pokemon){
       return createPokemonCard(pokemon)
     })
    return newCards
-}
+}*/
 
 let selectedType='';
 
@@ -67,11 +74,11 @@ selectionType.addEventListener('change', function (){
     selectedType = this.options[this.selectedIndex].value;
     percentagesByPokemon.innerHTML= "Percentage of pokemons with this type: " + computeType(allPokemon, selectedType); 
         if(selectedType === ""){
-            cardsContainer.innerHTML=pokemonCards.join('');
+            cardsContainer.innerHTML=pokemonCards(allPokemon).join('');
             percentagesByPokemon.innerHTML = '';
         } else {
             let filteredArray = filterByType(allPokemon, selectedType);
-            cardsContainer.innerHTML= createFilteredCards(filteredArray).join('');
+            cardsContainer.innerHTML= pokemonCards(filteredArray).join('');
             sortPokemon.selectedIndex=0;
         }
     }
@@ -81,10 +88,10 @@ selectionType.addEventListener('change', function (){
 sortPokemon.addEventListener('change',function(){
   let selectSort= this.options[this.selectedIndex].value;
     if(selectedType === ""){
-       cardsContainer.innerHTML= createFilteredCards(sort(allPokemon, selectSort)).join('');
+       cardsContainer.innerHTML= pokemonCards(sort(allPokemon, selectSort)).join('');
     } else {
       let filteredArr = filterByType(allPokemon, selectedType);
-      cardsContainer.innerHTML= createFilteredCards(sort(filteredArr, selectSort)).join('');
+      cardsContainer.innerHTML= pokemonCards(sort(filteredArr, selectSort)).join('');
     }      
   }    
 )
@@ -94,7 +101,7 @@ inputSearch.addEventListener('input', () => {
   const inputValue = inputSearch.value.toLowerCase();
   const result =pokeSearch(allPokemon,'name', inputValue);
     if (inputValue.length > 0 && result.length > 0) {
-      cardsContainer.innerHTML= (createFilteredCards(result)).join('');
+      cardsContainer.innerHTML= (pokemonCards(result)).join('');
       document.querySelector('.gif').style.display = "none";
     } else if (inputValue.length > 0 && result.length === 0) {
       percentagesByPokemon.innerHTML= '';
@@ -103,7 +110,7 @@ inputSearch.addEventListener('input', () => {
       sortPokemon.selectedIndex=0;
       selectionType.selectedIndex=0;
     } else {
-      cardsContainer.innerHTML= (createFilteredCards(result)).join('');
+      cardsContainer.innerHTML= (pokemonCards(result)).join('');
       document.querySelector('.gif').style.display = "none";
     }
   }
