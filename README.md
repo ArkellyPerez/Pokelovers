@@ -75,6 +75,8 @@ Vista y distribución del modal
 Realizammos el sketch en hojas, de acuerdo a la organización que le quisimos dar a nuestro proyecto, definimos una vista limpia y bien distribuida, con una barra de búsqueda y una para filtrado.
 En cuanto a las paleta de colores, inicialmente decidimos usar tonos pasteles relacionados a pokemon go, que luego fueron cambiados a tonalidades azules, que le dieron un aspecto sobrio y ordenado.
 
+Link al figma: <a href="https://www.figma.com/file/CciOMcwfxYCLvii2KpWP8q/Pokelovers">
+
 Vista general de la página
 
 <img src="https://i.ibb.co/LQrFJ8P/poke3.jpg" alt="imagen-pagina">
